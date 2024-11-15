@@ -1,9 +1,8 @@
-import { useRouter } from 'next/router';
+import { useParams } from 'next/navigation';
 import React from 'react';
 
 export default function Relatorio() {
-  const router = useRouter();
-  const { userId, relatorioId } = router.query;
+  const { userId, relatorioId } = useParams();
 
 
   return (

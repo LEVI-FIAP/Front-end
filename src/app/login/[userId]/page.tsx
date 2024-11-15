@@ -1,9 +1,8 @@
-import { useRouter } from 'next/router';
+import { useParams } from 'next/navigation';
 import React from 'react';
 
 export default function Usuario() {
-  const router = useRouter();
-  const  {userId} = router.query;
+  const {userId} = useParams();
 
 
   return (
