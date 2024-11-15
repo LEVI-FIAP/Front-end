@@ -1,11 +1,15 @@
-import { RelatorioIdParams } from '@/types'
-import React from 'react'
+import { useRouter } from 'next/router';
+import React from 'react';
 
-export default function Relatorio({params}:RelatorioIdParams) {
-  const relatorioId = Number(params.relatorioId)
+export default function Relatorio() {
+  const router = useRouter();
+  const { userId, relatorioId } = router.query;
+
+
   return (
     <main>
-        <h1>Relatorio {relatorioId}</h1>
+      <h1>Relatório {relatorioId}</h1>
+      <p>Do usuário {userId}</p>
     </main>
-  )
+  );
 }

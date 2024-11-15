@@ -1,11 +1,14 @@
-import { UserIdParams } from '@/types'
-import React from 'react'
+import { useRouter } from 'next/router';
+import React from 'react';
 
-export default function Usuario({params}:UserIdParams) {
-  const userId = Number(params.userId)
+export default function Usuario() {
+  const router = useRouter();
+  const  {userId} = router.query;
+
+
   return (
     <main>
-        <h1>Usuario {userId}</h1>
+      <h1>Usuario {userId}</h1>
     </main>
-  )
+  );
 }
