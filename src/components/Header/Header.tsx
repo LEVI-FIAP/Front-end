@@ -44,10 +44,12 @@ export default function Header() {
         </button>
         
         <dialog open={navStatus} className="menuNav">
+          <button onClick={() => mudarNav()} className="fecharNav">X</button>
           <Nav/>
         </dialog>
         
         <dialog open={opcoesStatus} className="menuUsuario">
+          <button onClick={() => mudarOpcoes()} className="fecharOpcoes">X</button>
           <Menu/>
         </dialog>
     </header>

@@ -46,7 +46,6 @@ export default function Nav() {
         </figure>
       </div>
       <Image src={FiapLogo} alt="Fiap-logo"/>
-      <h6>Clique na página para fechar o menu</h6>
     </div>
   )
 }
