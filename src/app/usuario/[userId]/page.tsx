@@ -1,32 +1,27 @@
-"use client"
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { TipoUsuario } from "@/types"
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
+interface UsuarioProps {
+  userId: string;
+}
 
-export default function Usuario() {
-  const router = useRouter();
-  const [user, setUser] = useState<TipoUsuario>({
-    id: 0,
-    nome: "",
-    email: "",
-    senha: "",
-  });
+// Corrigindo `getStaticPaths` com TypeScript
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = [{ params: { userId: '1' } }, { params: { userId: '2' } }];
+  return { paths, fallback: false };
+};
 
-  // Atualizando o estado assim que o router.query estiver disponível
-  useEffect(() => {
-    if (router.query.userId) {
-      setUser(prevState => ({
-        ...prevState,
-        id: Number(router.query.userId), // Convertendo para número
-      }));
-    }
-  }, [router.query]);
+// Corrigindo `getStaticProps` com TypeScript
+export const getStaticProps: GetStaticProps<UsuarioProps> = async ({ params }) => {
+  const userId = params?.userId as string;
+  return { props: { userId } };
+};
 
+const Usuario: React.FC<UsuarioProps> = ({ userId }) => {
   return (
     <main>
-      <h1>Página de Usuário</h1>
-      <h4>ID - {user.id}</h4>
+      <h1>Usuário {userId}</h1>
     </main>
   );
-}
+};
+
+export default Usuario;
