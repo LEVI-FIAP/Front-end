@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col bg-black text-white text-xl px-10 gap-14">
       <div className="cima flex gap-40 flex-wrap">
-        <aside className="info flex flex-col pr-64 gap-8">
+        <aside className="info flex flex-col pr-64 gap-8 phone:max-md:p-0">
           <Image src={LeviLogo} alt="logo-levi"/>
           <h5 className="font-bold text-2xl">Luz, Energia, Vida e Inovação</h5>
           <p className="w-80 text-gray-400">Nosso projeto visa a mudança da utilização de energia não renovavel, afim de ajudar o meio ambiente.</p>
@@ -37,7 +37,7 @@ export default function Footer() {
       </div>
       <div className="baixo justify-center flex pt-5 text-gray-400 border-t-2 border-gray-500">
         <h5>Todos os direitos reservados &copy; 2024 LEVI</h5>
-        <Image src={PainelSolar} alt="painel-solar-img"></Image>
+        <Image src={PainelSolar} alt="painel-solar-img" className="phone:max-md:h-7 phone:max-md:w-7"></Image>
       </div>
     </footer>
   )
