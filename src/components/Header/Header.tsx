@@ -30,16 +30,16 @@ export default function Header() {
     };
 
   return (
-    <header>
-        <button onClick={() => mudarNav()} className="btnNav">
+    <header className="flex bg-black text-white justify-between text-2xl items-center px-10 py-8" >
+        <button onClick={() => mudarNav()} className="btnNav flex gap-2">
           <h4>Menu</h4>
-          <SetaBaixo/>
+          <SetaBaixo className="relative top-1"/>
         </button>
 
 
         <Image src={LeviLogo} alt="levi-logo"/>
         
-        <button onClick={() => mudarOpcoes()} className="btnUser">
+        <button onClick={() => mudarOpcoes()} className="btnUser text-5xl">
           <User/>
         </button>
         
