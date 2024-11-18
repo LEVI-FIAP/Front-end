@@ -27,9 +27,9 @@ export default function Sobre() {
           <figcaption>
             <h3>Erick Alves Xavier dos Santos</h3>
             <h4>RM 556862</h4>
-            <a href=""><GithubLogo/></a>
-            <a href=""><LinkedinLogo/></a>
-            <a href=""><InstaLogo/></a>
+            <a href="https://github.com/Erick0105"><GithubLogo/></a>
+            <a href="https://www.linkedin.com/in/erick-alves-295180235/"><LinkedinLogo/></a>
+            <a href="https://www.instagram.com/erick_0105_/"><InstaLogo/></a>
           </figcaption>
         </figure>
         <figure className="luiz">
@@ -37,9 +37,9 @@ export default function Sobre() {
           <figcaption>
             <h3>Luiz Henrique Neri Reimberg</h3>
             <h4>RM 556864</h4>
-            <a href=""><GithubLogo/></a>
-            <a href=""><LinkedinLogo/></a>
-            <a href=""><InstaLogo/></a>
+            <a href="https://github.com/LuizHNR"><GithubLogo/></a>
+            <a href="https://www.linkedin.com/in/luiz-henrique-neri-reimberg-6ab0032b8/"><LinkedinLogo/></a>
+            <a href="https://www.instagram.com/loren_lhnr/"><InstaLogo/></a>
           </figcaption>
         </figure>
         <figure className="vicenzo">
@@ -47,9 +47,9 @@ export default function Sobre() {
           <figcaption>
             <h3>O mais lindo</h3>
             <h4>RM 554833</h4>
-            <a href=""><GithubLogo/></a>
-            <a href=""><LinkedinLogo/></a>
-            <a href=""><InstaLogo/></a>
+            <a href="https://github.com/fFukurou"><GithubLogo/></a>
+            <a href="https://www.linkedin.com/in/vicenzo-massao-de-oliveira-2a8b35109/"><LinkedinLogo/></a>
+            <a href="https://www.instagram.com/ffukurou_/"><InstaLogo/></a>
           </figcaption>
         </figure>
       </div>
