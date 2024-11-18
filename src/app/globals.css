@@ -10,6 +10,14 @@
 
             & .duvida{
                 @apply flex justify-between text-3xl px-5;
+
+                & button{
+                    @apply -rotate-90;
+                }
+
+                & .aberto{
+                    @apply rotate-1;
+                }
             }
     
             & dialog{
