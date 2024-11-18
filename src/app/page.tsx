@@ -1,10 +1,15 @@
+"use client"
 import { FaInfoCircle as InformacaoMark, FaQuestion as QuestionMark} from "react-icons/fa";
 import { IoPeopleCircleOutline as Pessoas} from "react-icons/io5";
 import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import Link from "next/link";
 import BtnPgs from "@/components/BtnPgs/BtnPgs";
+import dynamic from 'next/dynamic';
 
 export default function Home() {
+
+  const Carrossel = dynamic(() => import('@/components/Carrossel/Carrosel'), { ssr: false });
+  
   return (
     <main className="home">
       <div className="intro">
@@ -27,6 +32,7 @@ export default function Home() {
         </div>
       </div>
       <div className="carrosel">
+        <Carrossel/>
       </div>
     </main>
   )

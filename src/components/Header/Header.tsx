@@ -7,6 +7,7 @@ import { PiUserCircleFill as User } from "react-icons/pi";
 import LeviLogo from "@/images/levi-logo.png"
 import Nav from "../Nav/Nav";
 import Menu from "../Menu/Menu";
+import Link from "next/link";
 
 export default function Header() {
 
@@ -36,8 +37,9 @@ export default function Header() {
           <SetaBaixo className="relative top-1"/>
         </button>
 
-
-        <Image src={LeviLogo} alt="levi-logo"/>
+        <Link href="/">
+          <Image src={LeviLogo} alt="levi-logo"/>
+        </Link>
         
         <button onClick={() => mudarOpcoes()} className="btnUser text-5xl">
           <User/>
