@@ -25,6 +25,10 @@
             }
 
         }
+
+        & .slide{
+            @apply h-60 flex justify-center;
+        }
        
     }
 }
