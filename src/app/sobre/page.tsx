@@ -43,7 +43,7 @@ export default function Sobre() {
           </figcaption>
         </figure>
         <figure className="vicenzo">
-          {/* <Image src={ErickImg} alt="vicenzo-img"/> */}
+          <Image src={ErickImg} alt="vicenzo-img"/>
           <figcaption>
             <h3>O mais lindo</h3>
             <h4>RM 554833</h4>
