@@ -12,7 +12,7 @@ export default function Footer() {
         <aside className="info flex flex-col pr-64 gap-8 phone:max-md:p-0">
           <Image src={LeviLogo} alt="logo-levi"/>
           <h5 className="font-bold text-2xl">Luz, Energia, Vida e Inovação</h5>
-          <p className="w-80 text-gray-400">Nosso projeto visa a mudança da utilização de energia não renovavel, afim de ajudar o meio ambiente.</p>
+          <p className="w-80 text-gray-400 phone:max-md:w-auto">Nosso projeto visa a mudança da utilização de energia não renovavel, afim de ajudar o meio ambiente.</p>
           <Link href="/informacoes" className="flex gap-5 font-bold">
             <h5>Sobre LEVI</h5>
             <SetaDireita className="text-red-600 relative top-1"/>

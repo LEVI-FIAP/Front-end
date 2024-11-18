@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       screens: {
-        'phone': '400px',
+        'phone': '200px',
       },
     },
   },

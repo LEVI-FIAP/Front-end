@@ -30,7 +30,7 @@ export default function Header() {
     };
 
   return (
-    <header className="flex bg-black text-white justify-between text-2xl items-center px-10 py-8" >
+    <header className="flex bg-black text-white justify-between text-2xl items-center px-10 py-8 phone:max-md:p-0 phone:max-md:flex-wrap" >
         <button onClick={() => mudarNav()} className="btnNav flex gap-2">
           <h4>Menu</h4>
           <SetaBaixo className="relative top-1"/>
