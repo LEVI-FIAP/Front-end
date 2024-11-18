@@ -5,5 +5,18 @@
 @layer components{
     main{
         @apply text-2xl;
+
+        & .perguntas{
+
+            & .duvida{
+                @apply flex justify-between text-3xl px-5;
+            }
+    
+            & dialog{
+                @apply relative border-2 border-black p-10 bg-faq;
+            }
+
+        }
+       
     }
 }
