@@ -8,29 +8,35 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer>
-      <aside className="info">
-        <Image src={LeviLogo} alt="logo-levi"/>
-        <h5>Luz, Energia, Vida e Inovação</h5>
-        <p>Nosso projeto visa a mudança da utilização de energia não renovavel, afim de ajudar o meio ambiente.</p>
-        <Link href="/informacoes">
-          <h5>Sobre LEVI</h5>
-          <SetaDireita/>
-        </Link>
-      </aside>
-      <nav>
-        <Link href="/">Home</Link>
-        <Link href="/sobre">Sobre</Link>
-        <Link href="/usuario/login">Usuario</Link>
-        <Link href="/faq">FAQ</Link>
-        <Link href="/informacao">Informação</Link>
-      </nav>
-      <aside className="redes">
-        <h6>Acompanhe LEVI</h6>
-        <Image src={PainelSolar} alt="painel-solar-img"/>
-        <a href="https://github.com/LEVI-FIAP">
-          <GithubLogo/>
-        </a>
-      </aside>
+      <div className="cima">
+        <aside className="info">
+          <Image src={LeviLogo} alt="logo-levi"/>
+          <h5>Luz, Energia, Vida e Inovação</h5>
+          <p>Nosso projeto visa a mudança da utilização de energia não renovavel, afim de ajudar o meio ambiente.</p>
+          <Link href="/informacoes">
+            <h5>Sobre LEVI</h5>
+            <SetaDireita/>
+          </Link>
+        </aside>
+        <nav>
+          <Link href="/">Home</Link>
+          <Link href="/sobre">Sobre</Link>
+          <Link href="/usuario/login">Usuario</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/informacao">Informação</Link>
+        </nav>
+        <aside className="redes">
+          <h6>Acompanhe LEVI</h6>
+          <Image src={PainelSolar} alt="painel-solar-img"/>
+          <a href="https://github.com/LEVI-FIAP">
+            <GithubLogo/>
+          </a>
+        </aside>
+      </div>
+      <div className="baixo">
+        <h5>Todos os direitos reservados &copy; 2024 LEVI</h5>
+        <Image src={PainelSolar} alt="painel-solar-img"></Image>
+      </div>
     </footer>
   )
 }
