@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
 export type TipoUsuario = {
@@ -5,6 +6,21 @@ export type TipoUsuario = {
     email: string;
     senha: string;
     username: string;
+}
+
+export type TipoRelatorio = {
+    id: number;
+    consumoMensal: number;
+    contaLuz: number;
+    areaDesejada: number;
+    qtdPaineis: number;
+    potenciaTotal: number;
+    custoInstalacao: number;
+    economiaMensal: number;
+    payback: number;
+    energiaMes: number;
+    idRegiao: number;
+    idUsuario: number;
 }
 
 export type TipoBtnPgs = {
@@ -21,17 +37,15 @@ Sudeste - 4
 Sul - 5
 */
 
-export type TipoRelatorio = {
-    id: number;
-    consumoMensal: number;
-    contaLuz: number;
-    areaDesejada: number;
-    qtdPaineis: number;
-    potenciaTotal: number;
-    custoInstalacao: number;
-    economiaMensal: number;
-    payback: number;
-    energiaMes: number;
-    idRegiao: number;
-    idUsuario: number;
+
+export type TipoSlidesHome = {
+    img : string | StaticImageData;
+    subtitulo : string;
+    texto : string;
+    link : string
+    Icon : IconType
 }
+
+export type CarrosselProps = {
+    listaSlides: TipoSlidesHome[]; 
+  }

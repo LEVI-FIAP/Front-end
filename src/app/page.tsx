@@ -4,11 +4,36 @@ import { IoPeopleCircleOutline as Pessoas} from "react-icons/io5";
 import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import Link from "next/link";
 import BtnPgs from "@/components/BtnPgs/BtnPgs";
-import dynamic from 'next/dynamic';
+import Carrossel from "@/components/Carrossel/Carrosel";
+import Responsavel from "@/images/home/responsaveis.png"
+import Pessoa from "@/images/home/pessoa.png"
+import { TipoSlidesHome } from "@/types";
 
 export default function Home() {
 
-  const Carrossel = dynamic(() => import('@/components/Carrossel/Carrosel'), { ssr: false });
+  const listaSlide : TipoSlidesHome[] = [
+    {
+      img : Responsavel,
+      subtitulo : "Conheça os responsaveis",
+      texto : "Aqui você pode encontrar os responsaveis por planejar e criar LEVI",
+      link : "/sobre",
+      Icon : Pessoas,
+    },
+    {
+      img : Pessoa,
+      subtitulo : "Veja sobre nosso sistema",
+      texto : "Aqui o usuário pode descobrir as ferramentas disponíveis em nosso site.",
+      link : "/informacao",
+      Icon : InformacaoMark,  
+    },
+    {
+      img : Pessoa,
+      subtitulo : "Login",
+      texto : "Aqui você pode logar para ter acesso ao seu perfil e relatorios.",
+      link : "/usuario/login",
+      Icon : InformacaoMark,  
+    }
+  ]
   
   return (
     <main className="home">
@@ -32,7 +57,7 @@ export default function Home() {
         </div>
       </div>
       <div className="carrosel">
-        <Carrossel/>
+        <Carrossel listaSlides={listaSlide}/>
       </div>
     </main>
   )
