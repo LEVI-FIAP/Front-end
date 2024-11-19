@@ -30,11 +30,9 @@
         & .swiperHome{
             @apply flex relative top-20 bg-50% h-auto;
             & p{
-                @apply w-72 text-xl;
+                @apply w-72 text-xl font-normal;
             }
         }
-
-        
        
     }
 
