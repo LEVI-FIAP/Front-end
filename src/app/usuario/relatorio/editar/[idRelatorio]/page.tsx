@@ -1,48 +1,58 @@
 "use client"
-import { TipoUsuario } from "@/types";
+import { TipoRelatorio} from "@/types";
 import Link from "next/link"
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 
-export default function Cadastro() {
-  const [usuario, setUsuario] = useState<TipoUsuario>({
-    id:0,
-    email:"",
-    senha:"",
-    username:""
-});
+export default function Editar({params}: {params: { userId: number }}) {
+    const [relatorio, setRelatorio] = useState<TipoRelatorio>({
+        id: 0,
+        consumoMensal: 0,
+        contaLuz: 0,
+        areaDesejada: 0,
+        qtdPaineis: 0,
+        potenciaTotal: 0,
+        custoInstalacao: 0,
+        economiaMensal: 0,
+        payback: 0,
+        energiaMes: 0,
+        idRegiao: 0,
+        idUsuario: params.userId,
+    });
 
+    const navigate = useRouter();
 
+    useEffect(() => {
+        const chamarApi = async () =>{
+            const response = await fetch(`http://localhost:8080/gslevi_war/users/${params.userId}`);
+            const dados = await response.json();
+            setRelatorio(dados)
+        }
+        chamarApi()
+    })
 
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     try {
         
-        const response = await fetch("http://localhost:8080/gslevi_war/users",{
-            method:"POST",
+        const response = await fetch("Coloca a API aqui",{
+            method:"PUT",
             headers:{
                 "Content-Type":"application/json"
                 },
             body: JSON.stringify({
-              email: usuario.email,
-              senha: usuario.senha,
-              username: usuario.username
+            //   Coloca as coisas q vc precisa
           })
         });
 
         if(response.ok){
-            console.log("Cadastro feito com sucesso")
-            setUsuario({
-                  id:0,
-                  email:"",
-                  senha:"",
-                  username:""
-                });
-
+            console.log("Atualização com sucesso")
+            navigate.push(`/usuario/${params.idUser}`);
         }
 
     } catch (error) {
-        console.error("Falha no cadastramento de usuario: ", error);
+        console.error("Falha na alteração de dados do usuario: ", error);
     }
 }
 

@@ -12,16 +12,35 @@ export default function Usuario({params}: {params: { userId: number }}) {
   useEffect(() => {
         
     const chamadaApi = async () =>{
-        const response = await fetch('Nossa api de Get/relatorios por id do user aqui');
-        const dadosUser = await response.json();
-        setRelatorios(dadosUser);
+        const response = await fetch(`http://localhost:8080/gslevi_war/reports?user=${params.userId}`);
+        const dados = await response.json();
+        setRelatorios(dados);
         console.log(relatorios)
+        console.log(dados)
     }
 
     chamadaApi();
 
-}, [relatorios])
+}, [])
 
+const handleDelete = async ()=>{
+  try {
+      
+      const response = await fetch(`http://localhost:8080/gslevi_war/users/${params.userId}`,{
+          method:"DELETE",
+          headers:{
+              "Content-Type":"application/json"
+              }
+      });
+
+      if(response.ok){
+          console.log("Usuario deletado feita com sucesso")
+      }
+
+  } catch (error) {
+      console.error("Falha ao deletar usuario: ", error);
+  }
+}
     return (
     <main>
         <div className="intro">
@@ -40,6 +59,7 @@ export default function Usuario({params}: {params: { userId: number }}) {
 
           <div className="carrosel">
             <h1>{params.userId}</h1>
+            <button onClick={handleDelete}>Deletar</button>
             {/* Depois faço o carrosel calma chocolate branco */}
           </div>
         </div>

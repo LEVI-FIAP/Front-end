@@ -49,7 +49,3 @@ export type TipoSlidesHome = {
 export type CarrosselProps = {
     listaSlides: TipoSlidesHome[]; 
 }
-
-export type MensagemErroPropos = {
-    mensagem: string | null;
-}

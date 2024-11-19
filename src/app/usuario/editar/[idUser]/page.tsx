@@ -1,25 +1,35 @@
 "use client"
 import { TipoUsuario } from "@/types";
 import Link from "next/link"
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 
-export default function Cadastro() {
+export default function Editar({params}: {params: { idUser: number }}) {
   const [usuario, setUsuario] = useState<TipoUsuario>({
-    id:0,
+    id:params.idUser,
     email:"",
     senha:"",
     username:""
 });
 
+    const navigate = useRouter();
 
+    useEffect(() => {
+        const chamarApi = async () =>{
+            const response = await fetch(`http://localhost:8080/gslevi_war/users/${params.idUser}`);
+            const dados = await response.json();
+            setUsuario(dados)
+        }
+        chamarApi()
+    }, [])
 
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     try {
         
-        const response = await fetch("http://localhost:8080/gslevi_war/users",{
-            method:"POST",
+        const response = await fetch(`http://localhost:8080/gslevi_war/users/${params.idUser}`,{
+            method:"PUT",
             headers:{
                 "Content-Type":"application/json"
                 },
@@ -31,18 +41,21 @@ export default function Cadastro() {
         });
 
         if(response.ok){
-            console.log("Cadastro feito com sucesso")
+            console.log("Atualização feita com sucesso")
             setUsuario({
-                  id:0,
-                  email:"",
-                  senha:"",
-                  username:""
-                });
+                id:0,
+                email:"",
+                senha:"",
+                username:""
+            });
+
+            navigate.push(`/usuario/${params.idUser}`);
+
 
         }
 
     } catch (error) {
-        console.error("Falha no cadastramento de usuario: ", error);
+        console.error("Falha na alteração de dados do usuario: ", error);
     }
 }
 
