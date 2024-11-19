@@ -15,7 +15,7 @@ export default function Sobre() {
         <div className="px-10 flex flex-col gap-10">
           <div className="flex">
             <h2 className="text-4xl">Criadores de LEVI</h2>
-            <Image src={PainelSolar} alt="painel-solar"/>
+            <Image src={PainelSolar} alt="painel-solar" className="phone:max-md:w-7"/>
           </div>
           <h5 className="text-2xl">Turma: 1TDSPM</h5>
         </div>
