@@ -22,14 +22,19 @@
             }
     
             & dialog{
-                @apply relative border-2 border-black p-10 bg-faq;
+                @apply border-2 border-black p-10 bg-faq;
             }
 
         }
 
-        & .slide{
-            @apply h-60 flex justify-center;
+        & .swiperHome{
+            @apply flex relative top-20 bg-50% h-auto;
+            & p{
+                @apply w-72 text-xl;
+            }
         }
+
+        
        
     }
 
@@ -58,6 +63,8 @@
 
     }
 
-    
+    .home{
+        @apply pb-96;
+    }
 
 }
