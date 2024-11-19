@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Informacao() {
   return (
     <main className="informacao flex flex-col gap-80">
-      <div className="bg-[url('/fundo.png')] bg-cover bg-center">
+      <div className="bg-[url('../assets/fundo.png')] bg-cover bg-center">
         <Image src={LeviInvert} alt="logo-invertida" className="w-101"/>
       </div>
       <div className="resumo flex justify-between phone:max-lg:flex-col">
@@ -24,7 +24,7 @@ export default function Informacao() {
           <Image src={PaineisSolares} alt="paineis-solares" className="bg-slate-400 px-10 phone:max-lg:hidden"/>
         </aside>
       </div>
-      <div className="time bg-[url('/imagem-time.png')] bg-cover bg-center text-white px-20 py-10 font-bold text-2xl flex flex-col gap-16">
+      <div className="time bg-[url('../assets/imagem-time.png')] bg-cover bg-center text-white px-20 py-10 font-bold text-2xl flex flex-col gap-16">
         <h2 className="text-4xl">Nosso time</h2>
         <h4 className="text-3xl">Você quer conhecê los?</h4>
         <p className="w-96 font-normal phone:max-sm:w-auto">Se sua resposta for sim então fique a vontade para procurar e conhecer onde foi criado e armazenado o projeto LEVI, é só apertar o link abaixo!</p>
