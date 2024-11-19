@@ -46,6 +46,10 @@ const config: Config = {
         dialog: 'descer 2s ease-out forwards',
         direcao: 'direita 3s ease-out forwards',
       },
+      backgroundSize: {
+        '50%': '20px',
+        '16': '4rem',
+      }
     },
   },
   plugins: [],
