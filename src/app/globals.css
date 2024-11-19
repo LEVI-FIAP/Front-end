@@ -7,6 +7,10 @@
     main{
         @apply text-2xl;
 
+        & a{
+            @apply hover:text-2xl;
+        }
+
         & .perguntas{
 
             & .duvida{
@@ -22,13 +26,13 @@
             }
     
             & dialog{
-                @apply border-2 border-black p-10 bg-faq;
+                @apply relative border-2 border-black p-10 bg-faq;
             }
 
         }
 
         & .swiperHome{
-            @apply flex relative top-20 bg-50% h-auto;
+            @apply flex relative top-20 h-auto;
             & p{
                 @apply w-72 text-xl font-normal;
             }
@@ -61,7 +65,7 @@
 
     }
 
-    .home{
+    & .home{
         @apply pb-96;
     }
 

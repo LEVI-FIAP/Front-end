@@ -11,7 +11,7 @@ export default function Carrossel ({listaSlides} : CarrosselProps) {
       <Swiper spaceBetween={400} slidesPerView={2} loop={true} pagination={true} className='swiperHome' >
       {listaSlides.map((conteudo : TipoSlidesHome) => (
         <SwiperSlide className='slide' key={conteudo.subtitulo}>
-          <div className='flex flex-col justify-center gap-5 border-2 border-gray-400 w-min rounded-2xl bg-white p-7 font-bold'>
+          <div className='flex flex-col justify-center gap-5 border-2 border-gray-400 w-min rounded-2xl bg-white p-7 font-bold hover:border-blue-400'>
             <Image src={conteudo.img} alt='img-slide'/>
             <h3 className='text-center'>{conteudo.subtitulo}</h3>
             <p>{conteudo.texto}</p>
