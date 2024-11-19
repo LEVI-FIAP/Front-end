@@ -42,10 +42,14 @@ export type TipoSlidesHome = {
     img : string | StaticImageData;
     subtitulo : string;
     texto : string;
-    link : string
-    Icon : IconType
+    link : string;
+    Icon : IconType;
 }
 
 export type CarrosselProps = {
     listaSlides: TipoSlidesHome[]; 
-  }
+}
+
+export type MensagemErroPropos = {
+    mensagem: string | null;
+}
