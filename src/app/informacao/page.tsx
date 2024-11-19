@@ -15,8 +15,8 @@ export default function Informacao() {
         <div>
           <Image src={PaineisSolaresCima} alt="paineis-solares" className="hidden phone:max-lg:flex phone:max-lg:bg-cover phone:max-lg:bg-center"/>
         </div>
-        <aside className="txt w-50 pl-10 text-3xl flex flex-col gap-10 font-bold phone:max-lg:w-auto phone:max-lg:pt-5">
-        <h1 className="text-6xl pb-20">LEVI</h1>
+        <aside className="txt w-50 pl-10 text-3xl flex flex-col gap-10 font-bold phone:max-lg:w-auto phone:max-lg:pt-5 phone:max-lg:text-2xl">
+        <h1 className="text-6xl pb-20 phone:max-lg:text-5xl">LEVI</h1>
         <h4>Conheça a hístoria do LEVI</h4>
         <p className="font-normal">LEVI é um projeto criado em 2024. Cada letra do seu nome possui um significado: LUZ, ENERGIA, VIDA e INOVAÇÃO. Nosso objetivo é ajudar o meio ambiente por meio da utilização de energia renovável, mais especificamente, a energia solar. Este site permite que você, usuário, compreenda como a utilização da energia solar pode beneficiar sua vida. Para isso, criamos uma ferramenta que permite visualizar, com seus próprios olhos, a eficiência dessa fonte de energia renovável.</p>
         </aside>

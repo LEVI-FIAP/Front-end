@@ -31,4 +31,12 @@
         }
        
     }
+
+    & .pessoa{
+        @apply text-white flex flex-col p-16 gap-10 phone:max-md:text-black phone:max-md:px-0 text-center; 
+
+        & .links{
+            @apply flex gap-10 justify-center;
+        }
+    }
 }
