@@ -1,10 +1,36 @@
-export default async function Usuario({params}: {params: { userId: number }}) {
+// import { TipoRelatorio, TipoUsuario } from "@/types";
+// import { useEffect, useState } from "react";
+
+export default function Usuario({params}: {params: { userId: number }}) {
+  
+//   const [usuario, setUsuario] = useState<TipoUsuario>({
+//       id: params.userId,
+//       email:"",
+//       senha:"",
+//       username:""
+//   });
+
+//   const [relatorios, setRelatorios] = useState<TipoRelatorio[]>([]);
+
+//   useEffect(() => {
+        
+//     const chamadaApi = async () =>{
+//         const response = await fetch('Nossa api aqui');
+//         const dados = await response.json();
+//         setRelatorios(dados);
+//     }
+
+//     chamadaApi();
+
+// }, [])
 
     return (
-    <div>
+    <main>
         Usuario: {params.userId}
-    </div>)
+    </main>)
   }
+
+
 
 
   // ---------------------------------------------------------
