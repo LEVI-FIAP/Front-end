@@ -40,4 +40,24 @@
             @apply flex gap-10 justify-center;
         }
     }
+
+    & .navegacao{
+        & a{
+            @apply text-link;
+        }
+        & .energias{
+
+            & h5{
+                @apply text-lg;
+            }
+
+            & p{
+                @apply text-base max-w-80 font-normal;
+            }
+        }
+
+    }
+
+    
+
 }

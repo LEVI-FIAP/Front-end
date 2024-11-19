@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header className="flex bg-black text-white justify-between text-2xl items-center px-10 py-8 phone:max-md:p-0 phone:max-md:flex-wrap" >
-        <button onClick={() => mudarNav()} className="btnNav flex gap-2">
+        <button onClick={() => mudarNav()} className="btnNav flex gap-2 phone:max-sm:text-2xl">
           <h4>Menu</h4>
           <SetaBaixo className="relative top-1"/>
         </button>
@@ -41,12 +41,12 @@ export default function Header() {
           <Image src={LeviLogo} alt="levi-logo"/>
         </Link>
         
-        <button onClick={() => mudarOpcoes()} className="btnUser text-5xl">
+        <button onClick={() => mudarOpcoes()} className="btnUser text-5xl phone:max-sm:text-3xl">
           <User/>
         </button>
         
-        <dialog open={navStatus} className="menuNav">
-          <button onClick={() => mudarNav()} className="fecharNav">X</button>
+        <dialog open={navStatus} className="menuNav bg-black text-white fixed top-0 px-10 font-bold w-101 z-20">
+          <button onClick={() => mudarNav()} className="fecharNav flex justify-self-end pt-5">X</button>
           <Nav/>
         </dialog>
         

@@ -16,6 +16,7 @@ const config: Config = {
       },
       screens: {
         'phone': '200px',
+        'nav': '820px',
       },
       gap: {
         '100': '450px',
@@ -25,6 +26,9 @@ const config: Config = {
         '101': '100%',
         '105': '400px',
         '110': '569px',
+      },
+      fontSize: {
+        link: '16px',
       },
     },
   },
