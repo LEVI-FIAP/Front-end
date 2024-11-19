@@ -50,8 +50,8 @@ export default function Header() {
           <Nav/>
         </dialog>
         
-        <dialog open={opcoesStatus} className="menuUsuario">
-          <button onClick={() => mudarOpcoes()} className="fecharOpcoes">X</button>
+        <dialog open={opcoesStatus} className="menuUsuario bg-black absolute top-0 font-bold z-20">
+          <button onClick={() => mudarOpcoes()} className="fecharOpcoes relative top-10 left-80 phone:max-sm:left-0">X</button>
           <Menu/>
         </dialog>
     </header>
