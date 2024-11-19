@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+    main{
+        @apply text-2xl;
+
+        & .perguntas{
+
+            & .duvida{
+                @apply flex justify-between text-3xl px-5;
+
+                & button{
+                    @apply -rotate-90;
+                }
+
+                & .aberto{
+                    @apply rotate-1;
+                }
+            }
+    
+            & dialog{
+                @apply relative border-2 border-black p-10 bg-faq;
+            }
+
+        }
+
+        & .slide{
+            @apply h-60 flex justify-center;
+        }
+       
+    }
+
+    & .pessoa{
+        @apply text-white flex flex-col p-16 gap-10 phone:max-md:text-black phone:max-md:px-0 text-center; 
+
+        & .links{
+            @apply flex gap-10 justify-center;
+        }
+    }
+}
