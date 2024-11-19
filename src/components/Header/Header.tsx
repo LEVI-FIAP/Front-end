@@ -45,12 +45,12 @@ export default function Header() {
           <User/>
         </button>
         
-        <dialog open={navStatus} className="menuNav bg-black text-white fixed top-0 px-10 font-bold w-101 z-20">
+        <dialog open={navStatus} className="menuNav bg-black text-white fixed top-0 px-10 font-bold w-101 z-20 animate-dialog">
           <button onClick={() => mudarNav()} className="fecharNav flex justify-self-end pt-5">X</button>
           <Nav/>
         </dialog>
         
-        <dialog open={opcoesStatus} className="menuUsuario bg-black absolute top-0 font-bold z-20">
+        <dialog open={opcoesStatus} className="menuUsuario bg-black absolute top-0 font-bold z-20 animate-direcao">
           <button onClick={() => mudarOpcoes()} className="fecharOpcoes relative top-10 left-80 phone:max-sm:left-0">X</button>
           <Menu/>
         </dialog>

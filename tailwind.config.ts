@@ -30,6 +30,22 @@ const config: Config = {
       fontSize: {
         link: '16px',
       },
+      keyframes: {
+        descer: {
+          '0%': { transform: 'translateY(-100%)' },
+          '50%': { transform: 'translateY(20px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+        direita: {
+          '0%': { transform: 'translatex(100%)' },
+          '50%': { transform: 'translatex(-20px)' },
+          '100%': { transform: 'translatex(0)' },
+        },
+      },
+      animation: {
+        dialog: 'descer 3s ease-out forwards',
+        direcao: 'direita 3s ease-out forwards',
+      },
     },
   },
   plugins: [],

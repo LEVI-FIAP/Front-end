@@ -17,7 +17,7 @@
                 }
 
                 & .aberto{
-                    @apply rotate-1;
+                    @apply rotate-90;
                 }
             }
     
