@@ -1,7 +1,5 @@
 import FiapLogo from "@/images/fiap-logo.png"
 import PainelSolar from "@/images/sobre/painel-solar.png"
-import ErickImg from "@/images/sobre/erick-img.png"
-import LuizImg from "@/images/sobre/luiz-img.png"
 import { FaGithub as GithubLogo, FaLinkedin as LinkedinLogo, FaInstagram as InstaLogo} from "react-icons/fa";
 import Image from "next/image"
 
@@ -23,7 +21,6 @@ export default function Sobre() {
         <h5>Turma: 1TDSPM</h5>
 
         <figure className="erick">
-          <Image src={ErickImg} alt="erick-img"/>
           <figcaption>
             <h3>Erick Alves Xavier dos Santos</h3>
             <h4>RM 556862</h4>
@@ -33,7 +30,6 @@ export default function Sobre() {
           </figcaption>
         </figure>
         <figure className="luiz">
-          <Image src={LuizImg} alt="luiz-img"/>
           <figcaption>
             <h3>Luiz Henrique Neri Reimberg</h3>
             <h4>RM 556864</h4>
@@ -43,7 +39,6 @@ export default function Sobre() {
           </figcaption>
         </figure>
         <figure className="vicenzo">
-          <Image src={ErickImg} alt="vicenzo-img"/>
           <figcaption>
             <h3>O mais lindo</h3>
             <h4>RM 554833</h4>
