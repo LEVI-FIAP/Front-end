@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function Criar() {
+export default function Cadastrar() {
   return (
     <main>
         <Link href="/">Home</Link>

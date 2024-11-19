@@ -1,3 +1,4 @@
+"use client"
 import { TipoUsuario } from "@/types";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 

@@ -1,124 +1,47 @@
-// import { TipoRelatorio, TipoUsuario } from "@/types";
-// import { useEffect, useState } from "react";
+"use client"
+import BtnPgs from "@/components/BtnPgs/BtnPgs";
+import { FaPencilAlt as Lapis} from "react-icons/fa";
+import { TipoRelatorio} from "@/types";
+import { useEffect, useState } from "react";
 
 export default function Usuario({params}: {params: { userId: number }}) {
   
-//   const [usuario, setUsuario] = useState<TipoUsuario>({
-//       id: params.userId,
-//       email:"",
-//       senha:"",
-//       username:""
-//   });
 
-//   const [relatorios, setRelatorios] = useState<TipoRelatorio[]>([]);
+  const [relatorios, setRelatorios] = useState<TipoRelatorio[]>([]);
 
-//   useEffect(() => {
+  useEffect(() => {
         
-//     const chamadaApi = async () =>{
-//         const response = await fetch('Nossa api aqui');
-//         const dados = await response.json();
-//         setRelatorios(dados);
-//     }
+    const chamadaApi = async () =>{
+        const response = await fetch('Nossa api de Get/relatorios por id do user aqui');
+        const dadosUser = await response.json();
+        setRelatorios(dadosUser);
+        console.log(relatorios)
+    }
 
-//     chamadaApi();
+    chamadaApi();
 
-// }, [])
+}, [relatorios])
 
     return (
     <main>
-        Usuario: {params.userId}
+        <div className="intro">
+          <h1>Usuario</h1>
+          <p>Seja Bem vindo a página feita para você! Analíse e utilize das ferramentas que criamos especialmente para você usuario</p>
+        </div>
+        <div className="meio">
+          <h2>Bem vindo(a) Usuario</h2>
+          <div className="texto">
+            <p>O projeto visa calcular a viabilidade da instalação de painéis solares com base na área disponivel.... bla bla bla e etc etc</p>
+          </div>
+        </div>
+        <div className="relatorios">
+          <h5>Aperte o botão abaxio para criar um relatório</h5>
+          <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link="/usuario/relatorio/cadastrar"/>
+
+          <div className="carrosel">
+            <h1>{params.userId}</h1>
+            {/* Depois faço o carrosel calma chocolate branco */}
+          </div>
+        </div>
     </main>)
   }
-
-
-
-
-  // ---------------------------------------------------------
-//   "use client";
-
-// import { TipoProduto } from "@/types";
-// import { useRouter } from "next/navigation";
-// import { useEffect, useState } from "react";
-
-// export default function EditarProdutos({params}:{params:{id:number}}) {
-
-//     const navigate = useRouter();
-
-//     const [produto, setProduto] = useState<TipoProduto>({
-//         id:0,
-//         nome:"",
-//         qtd:0,
-//     });
-
-
-//     useEffect(() => {
-        
-//       const chamadaApi = async () =>{
-//           const response = await fetch(`http://localhost:3000/api/base-produtos/${params.id}`);
-//           const dados = await response.json();
-//           setProduto(dados);
-//       }
-
-//       chamadaApi();
-
-//   }, [])
-
-
-//     const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
-//         e.preventDefault();
-//         try {
-            
-//             const response = await fetch(`http://localhost:3000/api/base-produtos/${params.id}`,{
-//                 method:"PUT",
-//                 headers:{
-//                     "Content-Type":"application/json"
-//                     },
-//                 body: JSON.stringify(produto)
-//             });
-
-//             if(response.ok){
-//                 alert("Produto atualizado com sucesso.");
-//                 //Resetando os campos do form atravé do useState:
-//                 setProduto({
-//                     id:0,
-//                     nome:"",
-//                     qtd:0,
-//                     });
-//                 // Redirecionando o usuário para a página de preodutos:
-//                 navigate.push("/produtos");
-//             }
-
-//         } catch (error) {
-//             console.error("Falha na atualização de produtos: ", error);
-//             navigate.push("/error");
-//         }
-//     }
-
-//   return (
-//     <div>
-//         <h1>Editar Produtos</h1>
-
-//         <div>
-//             <form onSubmit={handleSubmit}>
-//                 <div>
-//                     <label htmlFor="idNome">Nome produto</label>
-//                     <input type="text" name="nome" id="idNome" value={produto.nome} onChange={(e)=> setProduto({...produto, nome:e.target.value}) } placeholder="Digite o nome do produto." required/>
-//                 </div>
-//                 <div>
-//                     <label htmlFor="idQtd">Quantidade produto</label>
-//                     <input type="number" name="qtd" id="idQtd" value={produto.qtd} onChange={(e)=> setProduto({...produto, qtd: parseInt(e.target.value)})} placeholder="Digite a quantidade do produto." required/>
-//                 </div>
-//                 <div>
-//                     <button type="submit">Atualizar</button>
-//                 </div>
-//             </form>
-//         </div>
-
-//     <div>
-//         <p>Nome       - {produto.nome}</p>
-//         <p>Quantidade - {produto.qtd}</p>
-//     </div>
-
-//     </div>
-//   )
-// }

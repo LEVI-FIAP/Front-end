@@ -46,7 +46,7 @@ export default function Cadastro() {
     } catch (error) {
         const mensagem = "Erro ao cadastrar usuario" + error
         setErro(mensagem)
-        console.error("Falha no cadastramento de produtos: ", error);
+        console.error("Falha no cadastramento de usuario: ", error);
     }
 }
 
