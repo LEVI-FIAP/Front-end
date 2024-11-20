@@ -1,11 +1,60 @@
 import PaineisSolares from "@/images/info/paineis-solares.png"
 import PaineisSolaresCima from "@/images/info/paineis-solares-cima.png"
 import LeviInvert from "@/images/info/levi-logo-invertida.png"
+import { TipoProfessor } from "@/types";
+import Pessoa from "@/images/home/pessoa.png"
 import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
+import Professores from "@/components/Professores/Professores";
 
 export default function Informacao() {
+
+  const professores : TipoProfessor[] = [
+    {
+      img : Pessoa,
+      nome : "Rodolfo Rodrigues Moreira",
+      materia : "Artificial Intelligence & Chatbot",
+      github: "linkGithub",
+      linkedin: "linkLinkedin",
+    },
+    {
+      img : Pessoa,
+      nome : "Marcel Thome Filho",
+      materia : "Building Relation Database",
+      github: "linkGithub",
+      linkedin: "linkLinkedin",
+    },
+    {
+      img : Pessoa,
+      nome : "Computational Thinking Using Python",
+      materia : "Antonio Rodrigues Carvalho Neto",
+      github: "linkGithub",
+      linkedin: "linkLinkedin",
+    },
+    {
+      img : Pessoa,
+      nome : "Domain Drive Design Using Java",
+      materia : "Eliane Rodrigues Marion Santa Rosa",
+      github: "linkGithub",
+      linkedin: "linkLinkedin",
+    },
+    {
+      img : Pessoa,
+      nome : "Front-end Design Engineering",
+      materia : "Alexandre Carlos de Jesus",
+      github: "linkGithub",
+      linkedin: "linkLinkedin",
+    },
+    {
+      img : Pessoa,
+      nome : "Software Engineering and Business Model",
+      materia : "Luiz Wanderley Tavares",
+      github: "linkGithub",
+      linkedin: "linkLinkedin",
+    },
+  ]
+
   return (
     <main className="informacao flex flex-col gap-80">
       <div className="bg-[url('../assets/fundo.png')] bg-cover bg-center">
@@ -38,7 +87,13 @@ export default function Informacao() {
       <div className="consideracoes">
         <h2>Considerações Finais</h2>
         <p>Viemos aqui para agradecer a cada professor que nos acompanhou durante essa jornada. Eles nos ajudaram a crescer e evoluir como pessoas, estudantes e futuros profissionais. Somos gratos por cada segundo que cada um dedicou a nós. O que somos capazes de fazer hoje é resultado do apoio e da ajuda de vocês. Foi incrível e divertido ter compartilhado esse tempo ao lado de cada um. Então, mais uma vez, muito obrigado!</p>
+
+        <div className="Carrosel">
+          <Professores listaSlides={professores} />
+        </div>
       </div>
+
+
     </main>
   )
 }
