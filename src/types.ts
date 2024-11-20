@@ -38,7 +38,7 @@ Sul - 5
 */
 
 
-export type TipoSlidesHome = {
+export type TipoCarrosel = {
     img : string | StaticImageData;
     subtitulo : string;
     texto : string;
@@ -46,6 +46,4 @@ export type TipoSlidesHome = {
     Icon : IconType;
 }
 
-export type CarrosselProps = {
-    listaSlides: TipoSlidesHome[]; 
-}
+

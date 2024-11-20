@@ -1,15 +1,19 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { CarrosselProps, TipoSlidesHome } from '@/types';
+import { TipoCarrosel} from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Carrossel ({listaSlides} : CarrosselProps) {
+
+export default function Carrossel ({listaSlides} : {listaSlides:TipoCarrosel[]}) {
     
   return (
     <div className='bg-gray-500 h-80'>
-      <Swiper spaceBetween={400} slidesPerView={2} loop={true} pagination={true} className='swiperHome' >
-      {listaSlides.map((conteudo : TipoSlidesHome) => (
+      <Swiper spaceBetween={400} slidesPerView={2} loop={true} pagination={true} className='swiperHome' autoplay={{
+        delay: 3000, 
+        disableOnInteraction: false, 
+      }}>
+      {listaSlides.map((conteudo : TipoCarrosel) => (
         <SwiperSlide className='slide' key={conteudo.subtitulo}>
           <div className='flex flex-col justify-center gap-5 border-2 border-gray-400 w-min rounded-2xl bg-white p-7 font-bold hover:border-blue-400'>
             <Image src={conteudo.img} alt='img-slide'/>
