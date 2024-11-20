@@ -1,6 +1,8 @@
 "use client"
 import { TipoUsuario } from "@/types";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
+import paisagem from "@/images/cadastro-login.png";
+import Image from "next/image";
 import { FaArrowCircleRight as SetaDireita} from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -46,30 +48,36 @@ export default function Login() {
 }
 
   return (
-    <main>
-        <aside className="formulario">
-            <Link href="/">
-                <SetaEsquerda />
+    <main className="formularios">
+        <aside className="phone:max-xl:hidden">
+            <Image src={paisagem} alt="Paisagem"/>
+        </aside>
+
+        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
+            
+            <Link className="voltar" href="/">
+                <SetaEsquerda className="seta"/>
                 <h3>Home</h3>
             </Link>
+
             <form onSubmit={handleSubmit} className="formCad">
                 <h1>Login</h1>
-                <div>
-                    <label htmlFor="idEmail">Seu email</label>
-                    <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
-                </div>
-                <div>
-                    <label htmlFor="idSenha">Sua senha</label>
-                    <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
-                </div>
-                <div>
-                    <button type="submit">Login</button>
-                </div>
-            </form>
-            <h5>Não possui cadastro?</h5>
-            <Link href="/usuario/cadastro">
-              <SetaDireita />
-            </Link>
+                  <div>
+                      <label htmlFor="idEmail">Seu email</label>
+                      <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
+                  </div>
+                  <div>
+                      <label htmlFor="idSenha">Sua senha</label>
+                      <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
+                  </div>
+                  <div>
+                      <button type="submit">Login</button>
+                  </div>
+                  <h5>Não possui cadastro?</h5>
+                  <Link href="/usuario/cadastro">
+                    <SetaDireita />
+                  </Link>
+              </form>
         </aside>
     </main>
   )
