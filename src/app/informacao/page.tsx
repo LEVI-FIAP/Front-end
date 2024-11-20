@@ -92,8 +92,6 @@ export default function Informacao() {
           <Professores listaSlides={professores} />
         </div>
       </div>
-
-
     </main>
   )
 }

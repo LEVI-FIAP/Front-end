@@ -10,6 +10,15 @@ export default function Usuario({params}: {params: { userId: number }}) {
 
   const [relatorios, setRelatorios] = useState<TipoRelatorio[]>([]);
 
+  const [deletarModal, setDeletarModal] = useState(false);
+
+  const mudarModal = () => {
+    setDeletarModal(false);
+    if(!deletarModal){
+      setDeletarModal(true)
+    }
+  };
+
   useEffect(() => {
         
     const chamadaApi = async () =>{
@@ -53,11 +62,19 @@ const handleDelete = async ()=>{
           <div className="texto">
             <p>O projeto visa calcular a viabilidade da instalação de painéis solares com base na área disponivel.... bla bla bla e etc etc</p>
           </div>
-          <button onClick={handleDelete}>Deletar User</button>
+          <h5>Aperte o botão abaixo para editar seus dados</h5>
+          <BtnPgs Icon={Lapis} texto="Editar Meus dados" link={`/usuario/editar/${params.userId}`}/>
+          <button onClick={() => mudarModal()}>Deletar Usuario</button>
+          <dialog open={deletarModal}>
+            <button onClick={() => mudarModal()}>X</button>
+            <p>Você tem certeza que quer deletar sua conta? Perdera seus relatorios e sua conta para sempre</p>
+            <button onClick={handleDelete}>Sim, quero deletar</button>
+          </dialog>
+          
         </div>
         <div className="relatorios">
           <h5>Aperte o botão abaxio para criar um relatório</h5>
-          <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar${params.userId}`}/>
+          <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar/${params.userId}`}/>
           <div className="carrosel">
             {relatorios.map((relatorio) => (
               <Relatorios key={relatorio.id} idRelatorio={relatorio.id}/>
