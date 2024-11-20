@@ -3,6 +3,7 @@ import { TipoUsuario } from "@/types";
 import Link from "next/link"
 import { useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
+import { FaArrowCircleRight as SetaDireita} from "react-icons/fa";
 
 export default function Cadastro() {
   const [usuario, setUsuario] = useState<TipoUsuario>({
@@ -58,19 +59,25 @@ export default function Cadastro() {
               <div>
                   <label htmlFor="idEmail">Email</label>
                   <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite o seu email." required/>
+                  <label htmlFor="idEmail">*Obrigatório</label>
               </div>
               <div>
                   <label htmlFor="idNome">Nome</label>
                   <input type="text" name="nome" id="idNome" value={usuario.username} onChange={(e)=> setUsuario({...usuario, username: e.target.value})} placeholder="Digite o seu nome" required/>
+                  <label htmlFor="idNome">*Obrigatório</label>
               </div>
               <div>
                   <label htmlFor="idSenha">Senha</label>
                   <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite a sua senha" required/>
+                  <label htmlFor="idSenha">*Obrigatório</label>
               </div>
               <div>
                   <button type="submit">Cadastrar</button>
               </div>
           </form>
+          <link href="/usuario/login">
+            <SetaDireita />
+          </link>
         </aside>
         <aside className="imagem"></aside>
     </main>
