@@ -71,10 +71,10 @@ export default function Login() {
                     <label htmlFor="idSenha">Sua senha</label>
                     <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                 </div>
-                <div className="flex">
+                <div className="flex gap-10">
                     <h5>Não possui cadastro?</h5>
                     <Link href="/usuario/cadastro">
-                        <SetaDireita />
+                        <SetaDireita className="text-red-800 relative top-1"/>
                     </Link>
 
                 </div>
