@@ -1,7 +1,7 @@
 "use client"
 import { TipoUsuario } from "@/types";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
-
+import { FaArrowCircleRight as SetaDireita} from "react-icons/fa";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -67,7 +67,9 @@ export default function Login() {
                       <button type="submit">Login</button>
                   </div>
                   <h5>Não possui cadastro?</h5>
-                  <Link href="/usuario/cadastro"></Link>
+                  <Link href="/usuario/cadastro">
+                    <SetaDireita />
+                  </Link>
               </form>
         </aside>
     </main>
