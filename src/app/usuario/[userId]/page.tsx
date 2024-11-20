@@ -59,8 +59,6 @@ const handleDelete = async ()=>{
 
           <div className="carrosel">
             <h1>{params.userId}</h1>
-            <button onClick={handleDelete}>Deletar</button>
-            {/* Depois faço o carrosel calma chocolate branco */}
           </div>
         </div>
     </main>)

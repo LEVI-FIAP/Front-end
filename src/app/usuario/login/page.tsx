@@ -1,9 +1,13 @@
 "use client"
 import { TipoUsuario } from "@/types";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
+<<<<<<< HEAD
 import paisagem from "@/images/cadastro-login.png";
 import Image from "next/image";
 
+=======
+import { FaArrowCircleRight as SetaDireita} from "react-icons/fa";
+>>>>>>> 2ab98347e9d8ef0bc78664bb8f5041ab7d0bf236
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -72,10 +76,16 @@ export default function Login() {
                       <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                   </div>
                   <h5>Não possui cadastro?</h5>
+<<<<<<< HEAD
                   <Link href="/usuario/cadastro"></Link>
                   <div className="btn">
                       <button type="submit">entrar</button>
                   </div>
+=======
+                  <Link href="/usuario/cadastro">
+                    <SetaDireita />
+                  </Link>
+>>>>>>> 2ab98347e9d8ef0bc78664bb8f5041ab7d0bf236
               </form>
         </aside>
     </main>
