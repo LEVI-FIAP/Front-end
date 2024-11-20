@@ -3,7 +3,6 @@ import PaineisSolaresCima from "@/images/info/paineis-solares-cima.png"
 import LeviInvert from "@/images/info/levi-logo-invertida.png"
 import { TipoProfessor } from "@/types";
 import Pessoa from "@/images/home/pessoa.png"
-import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
 import Professores from "@/components/Professores/Professores";
@@ -80,7 +79,6 @@ export default function Informacao() {
         <div className="link">
           <Link href="/sobre" className="flex py-10 border-t-2 border-white w-96 gap-10 phone:max-sm:w-auto">
             <h6 className="font-normal">click aqui para conhecê los</h6>
-            <SetaDireita className="text-red-600 relative top-1"/>
           </Link>
         </div>
       </div>

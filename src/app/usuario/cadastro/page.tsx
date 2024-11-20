@@ -3,7 +3,6 @@ import { TipoUsuario } from "@/types";
 import Link from "next/link"
 import { useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
-import { FaArrowCircleRight as SetaDireita} from "react-icons/fa";
 import paisagem from "@/images/cadastro-login.png";
 import Image from "next/image";
 
@@ -63,8 +62,8 @@ export default function Cadastro() {
     <main>
       <aside className="formulario  pl-40 pt-10 phone:max-xl:pl-5">
 
+          <SetaEsquerda />
           <Link href="/">
-            <SetaEsquerda />
             <h3>Home</h3>
           </Link>
           <form onSubmit={handleSubmit} className="formCadastro">
@@ -91,7 +90,6 @@ export default function Cadastro() {
               <h4>Já tem uma conta?</h4>
               <link href="/usuario/login">
                 <h6>Aperte aqui para logar</h6>
-                <SetaDireita />
               </link>
               <h3 className={className}>{mensagemStatus}</h3>
               <div>
