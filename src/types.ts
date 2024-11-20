@@ -1,4 +1,3 @@
-import { TipoRelatorio } from '@/types';
 import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
@@ -54,5 +53,3 @@ export type TipoProfessor = {
     github: string;
     linkedin: string;
 }
-
-
