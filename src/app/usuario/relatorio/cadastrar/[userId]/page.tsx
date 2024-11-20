@@ -5,6 +5,9 @@ import { useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 
 export default function Cadastrar({params}: {params: { userId: number }}) {
+
+  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [className, setClassName] = useState<string>("text-gray-500")
   const [relatorio, setRelatorio] = useState<TipoRelatorio>({
     id: 0,
     consumoMensal: 0,
@@ -54,11 +57,16 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
                 idRegiao: 0,
                 idUsuario: params.userId,
               });
+              setMensagem("Cadastro feito com sucesso")
+              setClassName("text-green-500")
 
         }
 
-    } catch (error) {
-        console.error("Falha no cadastramento de usuario: ", error);
+    } catch (erro) {
+      const msg = "Erro:" + erro
+      setMensagem(msg)
+      setClassName("text-red-500")
+      console.error("Falha no cadastramento de usuario: ", erro);
     }
 }
 
@@ -78,7 +86,14 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
               </div>
               <div>
                   <label htmlFor="idRegiao">Região que esta localizado</label>
-                  <input type="number" name="regiao" id="idRegiao" value={relatorio.idRegiao} onChange={(e)=> setRelatorio({...relatorio, idRegiao: Number(e.target.value),})} placeholder="Regiao" required/>
+                  <select name="regiao" id="idRegiao" value={relatorio.idRegiao} onChange={(e) => setRelatorio({...relatorio, idRegiao:Number(e.target.value),})} required>
+                    <option selected disabled value="">Escolha uma região</option>
+                    <option value="1">Norte</option>
+                    <option value="2">Nordeste</option>
+                    <option value="3">Centro Oeste</option>
+                    <option value="4">Sudeste</option>
+                    <option value="5">Sul</option>
+                  </select>
               </div>
               <div>
                   <label htmlFor="idConsumo">Consumo de Energia em kWh</label>
@@ -88,6 +103,7 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
                   <label htmlFor="idValor">Valor médio da conta</label>
                   <input type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
               </div>
+              <h3 className={className}>{mensagemStatus}</h3>
               <div>
                   <button type="submit">Cadastrar</button>
               </div>
