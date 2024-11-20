@@ -1,13 +1,9 @@
 "use client"
 import { TipoUsuario } from "@/types";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
-<<<<<<< HEAD
 import paisagem from "@/images/cadastro-login.png";
 import Image from "next/image";
-
-=======
 import { FaArrowCircleRight as SetaDireita} from "react-icons/fa";
->>>>>>> 2ab98347e9d8ef0bc78664bb8f5041ab7d0bf236
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -67,25 +63,25 @@ export default function Login() {
 
             <form onSubmit={handleSubmit} className="formCad">
                 <h1>Login</h1>
-                  <div className="campo">
-                      <label htmlFor="idEmail">Seu email</label>
-                      <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
-                  </div>
-                  <div className="campo">
-                      <label htmlFor="idSenha">Sua senha</label>
-                      <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
-                  </div>
-                  <h5>Não possui cadastro?</h5>
-<<<<<<< HEAD
-                  <Link href="/usuario/cadastro"></Link>
-                  <div className="btn">
-                      <button type="submit">entrar</button>
-                  </div>
-=======
-                  <Link href="/usuario/cadastro">
-                    <SetaDireita />
-                  </Link>
->>>>>>> 2ab98347e9d8ef0bc78664bb8f5041ab7d0bf236
+                <div className="campo">
+                    <label htmlFor="idEmail">Seu email</label>
+                    <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
+                </div>
+                <div className="campo">
+                    <label htmlFor="idSenha">Sua senha</label>
+                    <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
+                </div>
+                <div className="flex">
+                    <h5>Não possui cadastro?</h5>
+                    <Link href="/usuario/cadastro">
+                        <SetaDireita />
+                    </Link>
+
+                </div>
+                <Link href="/usuario/cadastro"></Link>
+                <div className="btn">
+                    <button type="submit">entrar</button>
+                </div>
               </form>
         </aside>
     </main>
