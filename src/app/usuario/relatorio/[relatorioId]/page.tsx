@@ -123,7 +123,7 @@ import Image from "next/image";
         <div className="fim">
           <aside className="txt">
             <h2>Comparação da suas contas</h2>
-            <h5> Antes: X / Agora: X</h5>
+            <h5> Antes: {relatorio.contaLuz} / Agora: X</h5>
             <p>Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
             <div className="link">
               <Link href={`/usuario/${relatorio.idUsuario}`}>

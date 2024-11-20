@@ -1,58 +1,86 @@
 "use client"
 import { TipoRelatorio} from "@/types";
 import Link from "next/link"
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 
-export default function Editar({params}: {params: { userId: number }}) {
-    const [relatorio, setRelatorio] = useState<TipoRelatorio>({
-        id: 0,
-        consumoMensal: 0,
-        contaLuz: 0,
-        areaDesejada: 0,
-        qtdPaineis: 0,
-        potenciaTotal: 0,
-        custoInstalacao: 0,
-        economiaMensal: 0,
-        payback: 0,
-        energiaMes: 0,
-        idRegiao: 0,
-        idUsuario: params.userId,
-    });
+export default function Cadastrar({params}: {params: { idRelatorio: number }}) {
 
-    const navigate = useRouter();
+  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [className, setClassName] = useState<string>("text-gray-500")
+  const [relatorio, setRelatorio] = useState<TipoRelatorio>({
+    id: params.idRelatorio,
+    consumoMensal: 0,
+    contaLuz: 0,
+    areaDesejada: 0,
+    qtdPaineis: 0,
+    potenciaTotal: 0,
+    custoInstalacao: 0,
+    economiaMensal: 0,
+    payback: 0,
+    energiaMes: 0,
+    idRegiao: 0,
+    idUsuario: 0,
+});
 
-    useEffect(() => {
-        const chamarApi = async () =>{
-            const response = await fetch(`http://localhost:8080/gslevi_war/users/${params.userId}`);
-            const dados = await response.json();
-            setRelatorio(dados)
-        }
-        chamarApi()
-    })
+const navigate = useRouter();
+
+
+useEffect(() => {
+    const chamarApi = async () =>{
+        const response = await fetch(`http://localhost:8080/gslevi_war/reports/${params.idRelatorio}`);
+        const dados = await response.json();
+        setRelatorio(dados)
+    }
+    chamarApi()
+}, [params.idRelatorio])
 
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     try {
         
-        const response = await fetch("Coloca a API aqui",{
+        const response = await fetch(`http://localhost:8080/gslevi_war/reports/${params.idRelatorio}`,{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
                 },
             body: JSON.stringify({
-            //   Coloca as coisas q vc precisa
+              consumoMensal: relatorio.consumoMensal,
+              contaLuz: relatorio.contaLuz,
+              areaDesejada: relatorio.areaDesejada,
+              idRegiao: relatorio.idRegiao,
           })
         });
 
         if(response.ok){
-            console.log("Atualização com sucesso")
-            navigate.push(`/usuario/${params.idUser}`);
+            console.log("Atualização de dados feita com sucesso")
+            setRelatorio({
+                id: params.idRelatorio,
+                consumoMensal: 0,
+                contaLuz: 0,
+                areaDesejada: 0,
+                qtdPaineis: 0,
+                potenciaTotal: 0,
+                custoInstalacao: 0,
+                economiaMensal: 0,
+                payback: 0,
+                energiaMes: 0,
+                idRegiao: 0,
+                idUsuario: 0,
+              });
+              setMensagem("Cadastro feito com sucesso")
+              setClassName("text-green-500")
+              navigate.push(`/usuario/relatorio/${params.idRelatorio}`);
+
+
         }
 
-    } catch (error) {
-        console.error("Falha na alteração de dados do usuario: ", error);
+    } catch (erro) {
+      const msg = "Erro:" + erro
+      setMensagem(msg)
+      setClassName("text-red-500")
+      console.error("Falha no cadastramento de usuario: ", erro);
     }
 }
 
@@ -61,24 +89,37 @@ export default function Editar({params}: {params: { userId: number }}) {
       <aside className="formulario">
           <Link href="/">
             <SetaEsquerda />
-            <h3>Home</h3>
+            <h3>Dados</h3>
+            <p>A maioria dos dados que pedimos esta presente na sua conta de luz!</p>
           </Link>
           <form onSubmit={handleSubmit} className="formCadastro">
-                <h1>Cadastro</h1>
+                <h1>Dados</h1>
               <div>
-                  <label htmlFor="idEmail">Email</label>
-                  <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite o seu email." required/>
+                  <label htmlFor="idTamanho">Tamanho disponivel da sua propriedade</label>
+                  <input type="number" name="tamanho" id="idTamanho" value={relatorio.areaDesejada} onChange={(e)=> setRelatorio({...relatorio, areaDesejada:Number(e.target.value),}) } placeholder="Digite o tamanho em metros quadrados." required/>
               </div>
               <div>
-                  <label htmlFor="idNome">Nome</label>
-                  <input type="text" name="nome" id="idNome" value={usuario.username} onChange={(e)=> setUsuario({...usuario, username: e.target.value})} placeholder="Digite o seu nome" required/>
+                  <label htmlFor="idRegiao">Região que esta localizado</label>
+                  <select name="regiao" id="idRegiao" value={relatorio.idRegiao} onChange={(e) => setRelatorio({...relatorio, idRegiao:Number(e.target.value),})} required>
+                    <option selected disabled value="">Escolha uma região</option>
+                    <option value="1">Norte</option>
+                    <option value="2">Nordeste</option>
+                    <option value="3">Centro Oeste</option>
+                    <option value="4">Sudeste</option>
+                    <option value="5">Sul</option>
+                  </select>
               </div>
               <div>
-                  <label htmlFor="idSenha">Senha</label>
-                  <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite a sua senha" required/>
+                  <label htmlFor="idConsumo">Consumo de Energia em kWh</label>
+                  <input type="number" name="consumo" id="idConsumo" value={relatorio.consumoMensal} onChange={(e)=> setRelatorio({...relatorio, consumoMensal: Number(e.target.value)})} placeholder="Digite o quanto você consome de energia por mês" required/>
               </div>
               <div>
-                  <button type="submit">Cadastrar</button>
+                  <label htmlFor="idValor">Valor médio da conta de luz</label>
+                  <input type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
+              </div>
+              <h3 className={className}>{mensagemStatus}</h3>
+              <div>
+                  <button type="submit">Atualizar Dados</button>
               </div>
           </form>
         </aside>

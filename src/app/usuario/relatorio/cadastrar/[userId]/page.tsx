@@ -100,7 +100,7 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
                   <input type="number" name="consumo" id="idConsumo" value={relatorio.consumoMensal} onChange={(e)=> setRelatorio({...relatorio, consumoMensal: Number(e.target.value)})} placeholder="Digite o quanto você consome de energia por mês" required/>
               </div>
               <div>
-                  <label htmlFor="idValor">Valor médio da conta</label>
+                  <label htmlFor="idValor">Valor médio da conta de luz</label>
                   <input type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
               </div>
               <h3 className={className}>{mensagemStatus}</h3>
