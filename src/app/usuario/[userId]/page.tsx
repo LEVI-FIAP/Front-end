@@ -25,8 +25,6 @@ export default function Usuario({params}: {params: { userId: number }}) {
         const response = await fetch(`http://localhost:8080/gslevi_war/reports?user=${params.userId}`);
         const dados = await response.json();
         setRelatorios(dados);
-        console.log(relatorios)
-        console.log(dados)
     }
 
     chamadaApi();
