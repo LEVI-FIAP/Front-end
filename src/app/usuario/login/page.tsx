@@ -62,16 +62,16 @@ export default function Login() {
 
             <form onSubmit={handleSubmit} className="formCad">
                 <h1>Login</h1>
-                  <div>
+                  <div className="campo">
                       <label htmlFor="idEmail">Seu email</label>
                       <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
                   </div>
-                  <div>
+                  <div className="campo">
                       <label htmlFor="idSenha">Sua senha</label>
                       <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                   </div>
-                  <div>
-                      <button type="submit">Login</button>
+                  <div className="btn">
+                      <button type="submit">entrar</button>
                   </div>
                   <h5>Não possui cadastro?</h5>
                   <Link href="/usuario/cadastro">
