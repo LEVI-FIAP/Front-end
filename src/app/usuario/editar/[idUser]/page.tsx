@@ -22,7 +22,7 @@ export default function Editar({params}: {params: { idUser: number }}) {
             setUsuario(dados)
         }
         chamarApi()
-    }, [])
+    }, [params.idUser])
 
   const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault();

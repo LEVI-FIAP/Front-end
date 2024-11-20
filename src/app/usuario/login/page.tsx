@@ -37,7 +37,6 @@ export default function Login() {
             const user = await response.json();
             console.log("Login com sucesso")
             navigate.push(`/usuario/${user["id"]}`);
-            
         }
         
 

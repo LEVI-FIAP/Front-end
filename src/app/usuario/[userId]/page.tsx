@@ -3,6 +3,7 @@ import BtnPgs from "@/components/BtnPgs/BtnPgs";
 import { FaPencilAlt as Lapis} from "react-icons/fa";
 import { TipoRelatorio} from "@/types";
 import { useEffect, useState } from "react";
+import Relatorios from "@/components/Relatorios/Relatorios";
 
 export default function Usuario({params}: {params: { userId: number }}) {
   
@@ -21,7 +22,7 @@ export default function Usuario({params}: {params: { userId: number }}) {
 
     chamadaApi();
 
-}, [])
+}, [params.userId, relatorios])
 
 const handleDelete = async ()=>{
   try {
@@ -52,13 +53,15 @@ const handleDelete = async ()=>{
           <div className="texto">
             <p>O projeto visa calcular a viabilidade da instalação de painéis solares com base na área disponivel.... bla bla bla e etc etc</p>
           </div>
+          <button onClick={handleDelete}>Deletar User</button>
         </div>
         <div className="relatorios">
           <h5>Aperte o botão abaxio para criar um relatório</h5>
-          <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link="/usuario/relatorio/cadastrar"/>
-
+          <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar${params.userId}`}/>
           <div className="carrosel">
-            <h1>{params.userId}</h1>
+            {relatorios.map((relatorio) => (
+              <Relatorios key={relatorio.id} idRelatorio={relatorio.id}/>
+            ))}
           </div>
         </div>
     </main>)
