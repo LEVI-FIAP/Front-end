@@ -32,7 +32,7 @@ export default function Home() {
       subtitulo : "FAQ",
       texto : "Aqui você pode tirar algumas dúvidas sobre nosso sistema.",
       link : "/faq",
-      Icon : InformacaoMark,  
+      Icon : QuestionMark,  
     },
     {
       img : Pessoa,
