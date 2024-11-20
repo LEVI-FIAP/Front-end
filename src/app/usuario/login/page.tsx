@@ -58,7 +58,7 @@ export default function Login() {
   return (
     <main className="formularios">
         <aside className="phone:max-xl:hidden">
-            <Image src={paisagem} alt="Paisagem"/>
+            <Image src={paisagem} alt="Paisagem" className="h-101"/>
         </aside>
 
         <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
@@ -77,13 +77,15 @@ export default function Login() {
                   <div className="campo">
                       <label htmlFor="idSenha">Sua senha</label>
                       <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
-                      <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
-                        <input type="checkbox"/>
-                      </button>
-                      <h5>Mostrar Senha</h5>
+                      <div className="mostrar">
+                        <h5>Mostrar Senha</h5>
+                        <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
+                            <input type="checkbox"/>
+                        </button>
+                      </div>
                   </div>
                   <h4>Não possui cadastro?</h4>
-                  <Link href="/usuario/cadastro">
+                  <Link href="/usuario/cadastro" className="flex gap-5">
                     <h6>Aperte aqui para criar uma conta</h6>
                     <SetaDireita />
                   </Link>
