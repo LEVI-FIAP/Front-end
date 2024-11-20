@@ -1,18 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { TipoProfessor} from '@/types';
 import 'swiper/css/autoplay'
+import 'swiper/css';
 import { Autoplay } from 'swiper/modules'
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub as Github, FaLinkedin as Linkedin } from "react-icons/fa";
-import 'swiper/css';
 
 
 export default function Professores ({listaSlides} : {listaSlides:TipoProfessor[]}) {
     
   return (
     <div className='bg-gray-500 h-80'>
-      <Swiper modules = {[Autoplay]} spaceBetween={400} slidesPerView={2} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
+      <Swiper modules = {[Autoplay]} spaceBetween={250} slidesPerView={2} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
         delay: 2500, 
         disableOnInteraction: false, 
       }}>

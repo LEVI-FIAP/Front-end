@@ -12,6 +12,10 @@ export default function Login() {
   
   const navigate = useRouter();
 
+  const [senhaVisivel, setSenhaVisivel] = useState(false)
+  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [className, setClassName] = useState<string>("text-gray-500")
+
   const [usuario, setUsuario] = useState<TipoUsuario>({
     id:0,
     email:"",
@@ -37,12 +41,16 @@ export default function Login() {
 
         if(response.ok){
             const user = await response.json();
-            console.log("Login com sucesso")
+            setMensagem("Login feito com sucesso")
+            setClassName("text-green-500")
             navigate.push(`/usuario/${user["id"]}`);
         }
         
-
+        
     } catch (erro) {
+        const msg = "Erro:" + erro
+        setMensagem(msg)
+        setClassName("text-red-500")
         console.error("Falha ao logar: ", erro);
     }
 }
@@ -68,15 +76,21 @@ export default function Login() {
                   </div>
                   <div className="campo">
                       <label htmlFor="idSenha">Sua senha</label>
-                      <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
+                      <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
+                      <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
+                        <input type="checkbox"/>
+                      </button>
+                      <h5>Mostrar Senha</h5>
                   </div>
+                  <h4>Não possui cadastro?</h4>
+                  <Link href="/usuario/cadastro">
+                    <h6>Aperte aqui para criar uma conta</h6>
+                    <SetaDireita />
+                  </Link>
+                  <h3 className={className}>{mensagemStatus}</h3>
                   <div className="btn">
                       <button type="submit">entrar</button>
                   </div>
-                  <h5>Não possui cadastro?</h5>
-                  <Link href="/usuario/cadastro">
-                    <SetaDireita />
-                  </Link>
               </form>
         </aside>
     </main>

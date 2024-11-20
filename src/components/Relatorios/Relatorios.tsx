@@ -12,7 +12,7 @@ export default function Relatorios ({idRelatorio} : {idRelatorio:number}) {
     
   return (
     <div>
-      <Swiper modules = {[Autoplay]} spaceBetween={400} slidesPerView={3} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
+      <Swiper modules = {[Autoplay]} spaceBetween={300} slidesPerView={3} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
         delay: 2500, 
         disableOnInteraction: false, 
       }}>

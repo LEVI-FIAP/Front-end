@@ -8,6 +8,11 @@ import paisagem from "@/images/cadastro-login.png";
 import Image from "next/image";
 
 export default function Cadastro() {
+
+  const [senhaVisivel, setSenhaVisivel] = useState(false)
+  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [className, setClassName] = useState<string>("text-gray-500")
+  
   const [usuario, setUsuario] = useState<TipoUsuario>({
     id:0,
     email:"",
@@ -36,16 +41,21 @@ export default function Cadastro() {
         if(response.ok){
             console.log("Cadastro feito com sucesso")
             setUsuario({
-                  id:0,
-                  email:"",
-                  senha:"",
-                  username:""
-                });
+              id:0,
+              email:"",
+              senha:"",
+              username:""
+            });
+            setMensagem("Cadastro feito com sucesso")
+            setClassName("text-green-500")
 
         }
 
-    } catch (error) {
-        console.error("Falha no cadastramento de usuario: ", error);
+    } catch (erro) {
+      const msg = "Erro:" + erro
+      setMensagem(msg)
+      setClassName("text-red-500")
+      console.error("Falha no cadastramento de usuario: ", erro);
     }
 }
 
@@ -60,25 +70,34 @@ export default function Cadastro() {
           <form onSubmit={handleSubmit} className="formCadastro">
                 <h1>Cadastro</h1>
               <div>
-                  <label htmlFor="idEmail">Email</label>
-                  <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite o seu email." required/>
+                  <label htmlFor="idNome">Nome</label>
+                  <input type="text" name="nome" id="idNome" value={usuario.username} onChange={(e)=> setUsuario({...usuario, username: e.target.value})} placeholder="Digite seu nome" required/>
+                  <label htmlFor="idNome">*Obrigatório</label>
               </div>
               <div>
-                  <label htmlFor="idNome">Nome</label>
-                  <input type="text" name="nome" id="idNome" value={usuario.username} onChange={(e)=> setUsuario({...usuario, username: e.target.value})} placeholder="Digite o seu nome" required/>
+                  <label htmlFor="idEmail">Email</label>
+                  <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value})} placeholder="Digite seu email." required/>
+                  <label htmlFor="idEmail">*Obrigatório</label>
               </div>
               <div>
                   <label htmlFor="idSenha">Senha</label>
-                  <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite a sua senha" required/>
+                  <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
+                  <label htmlFor="idSenha">*Obrigatório</label>
+                  <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
+                    <input type="checkbox"/>
+                  </button>
+                  <h5>Mostrar Senha</h5>
               </div>
+              <h4>Já tem uma conta?</h4>
+              <link href="/usuario/login">
+                <h6>Aperte aqui para logar</h6>
+                <SetaDireita />
+              </link>
+              <h3 className={className}>{mensagemStatus}</h3>
               <div>
                   <button type="submit">Cadastrar</button>
               </div>
           </form>
-          <link href="/usuario/login">
-            <h3>Já possui Conta?</h3>
-            <SetaDireita />
-          </link>
       </aside>
       <aside className="phone:max-xl:hidden">
         <Image src={paisagem} alt="Paisagem"/>

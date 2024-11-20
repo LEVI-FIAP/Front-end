@@ -6,6 +6,11 @@ import { useEffect, useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 
 export default function Editar({params}: {params: { idUser: number }}) {
+
+  const [senhaVisivel, setSenhaVisivel] = useState(false)
+  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [className, setClassName] = useState<string>("text-gray-500")
+
   const [usuario, setUsuario] = useState<TipoUsuario>({
     id:params.idUser,
     email:"",
@@ -48,14 +53,16 @@ export default function Editar({params}: {params: { idUser: number }}) {
                 senha:"",
                 username:""
             });
-
+            setMensagem("Dados editados com sucesso")
+            setClassName("text-green-500")
             navigate.push(`/usuario/${params.idUser}`);
-
-
         }
 
-    } catch (error) {
-        console.error("Falha na alteração de dados do usuario: ", error);
+    } catch (erro) {
+      const msg = "Erro:" + erro
+      setMensagem(msg)
+      setClassName("text-red-500")
+      console.error("Falha na alteração de dados do usuario: ", erro);
     }
 }
 
@@ -78,8 +85,13 @@ export default function Editar({params}: {params: { idUser: number }}) {
               </div>
               <div>
                   <label htmlFor="idSenha">Senha</label>
-                  <input type="password" name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite a sua senha" required/>
+                  <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite a sua senha" required/>
+                  <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
+                    <input type="checkbox"/>
+                  </button>
+                  <h5>Mostrar Senha</h5>
               </div>
+              <h3 className={className}>{mensagemStatus}</h3>
               <div>
                   <button type="submit">Cadastrar</button>
               </div>
