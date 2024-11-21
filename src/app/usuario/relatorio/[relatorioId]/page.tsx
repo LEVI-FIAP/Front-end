@@ -3,11 +3,13 @@ import PainelImg from "@/images/relatorio/painel.png"
 import MoedasImg from "@/images/relatorio/moedas.png"
 import CofrinhoImg from "@/images/relatorio/cofrinho.png"
 import DinheiroImg from "@/images/relatorio/dinheiro.png"
+import { FaPencilAlt as Lapis} from "react-icons/fa";
 import { TipoRelatorio } from "@/types";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaArrowCircleRight as SetaDireita} from "react-icons/fa";
 import Image from "next/image";
+import BtnPgs from "@/components/BtnPgs/BtnPgs"
 
   export default function Usuario({params}: {params: {relatorioId: number }}) {
 
@@ -59,19 +61,12 @@ if (erro) {
   )
 }
     return (
-      <main className="flex flex-col gap-14">
-        <div className="intro bg-[url('../assets/fundo-relatorio.png')] bg-cover bg-center text-white px-20 py-32 flex flex-col gap-16 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2">
-          <div className="txt flex flex-col gap-16">
-            <h1 className="text-3xl phone:max-md:text-xl">Relatório {params.relatorioId}</h1>
-            <p className="w-110 phone:max-md:w-auto">Veja os detalhes e contas que utilizamos para o descobrimento do seu investimento no sistema solar</p>
-            <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10">
-              <h6>Veja todos os seus relatorios</h6>
-              <Link href={`/usuario/${relatorio.idUsuario}`} className="relative top-1 text-red-600">
-                <SetaDireita/>
-              </Link>
-
-            </div>
-          </div>
+      <main>
+        <div className="intro bg-[url('../assets/fundo-relatorio.png')] bg-cover bg-center text-white px-20 py-32 flex flex-col gap-10 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2">
+          <aside className="txt">
+            <h1>Relatório {params.relatorioId}</h1>
+            <p>Veja os detalhes e contas que utilizamos para o descobrimento do seu investimento no sistema solar</p>
+          </aside>
         </div>
         <div className="meio flex flex-col gap-10">
           <div className="qtdPainel flex h-min bg-gradient-to-b from-orange-700 to-orange-400 justify-between phone:max-lg:py-10">
@@ -139,15 +134,17 @@ if (erro) {
           </div>
 
         </div>
-
-        <div className="bg-[url('../assets/fundo-relatorio-2.png')] bg-cover bg-center text-white px-20 py-10 flex flex-col gap-14 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2 phone:max-lg:pt-20">
-          <p className="w-110 phone:max-md:w-80">Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
-          <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10">
-            <h6>Voltar para a página de usuario</h6>
-            <Link href={`/usuario/${relatorio.idUsuario}`} className="relative top-1 text-red-600">
-              <SetaDireita/>
+        <div className="fim">
+          <BtnPgs Icon={Lapis} texto="Editar Relatorio" link={`/usuario/relatorio/editar/${params.relatorioId}`}/>
+          <aside className="txt">
+            <p>Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
+            <div className="link">
+              <Link href={`/usuario/${relatorio.idUsuario}`}>
+                <h6>Voltar para a página de usuario</h6>
+                <SetaDireita/>
               </Link>
-          </div>
+            </div>
+          </aside>
         </div>
 
       </main>
