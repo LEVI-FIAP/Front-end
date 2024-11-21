@@ -69,31 +69,31 @@ export default function Editar({params}: {params: { idUser: number }}) {
 }
 
   return (
-    <main className="formularios">
+    <main className="formularios flex text-2xl font-bold justify-between gap-10 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
       <aside className="phone:max-xl:hidden">
         <Image src={fundo} alt="form-edicao" className="h-101"/>
       </aside>
-      <aside className="formulario pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
+      <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0 flex flex-col gap-20 pb-5">
 
-          <Link className="voltar" href="/">
-            <SetaEsquerda className="seta"/>
+          <Link className="voltar flex gap-4" href="/">
+            <SetaEsquerda className="seta relative top-1"/>
             <h3>Home</h3>
           </Link>
 
-          <form onSubmit={handleSubmit} className="formCad">
-                <h1>Editar dados</h1>
-              <div className="campo">
+          <form onSubmit={handleSubmit} className="formCad flex flex-col gap-10">
+              <h1 className="text-4xl phone:max-sm:text-2xl">Editar dados</h1>
+              <div className="campo flex flex-col gap-10">
                   <label htmlFor="idEmail">Email</label>
-                  <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite o seu email." required/>
+                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite o seu email." required/>
               </div>
-              <div className="campo">
+              <div className="campo flex flex-col gap-10">
                   <label htmlFor="idNome">Nome</label>
-                  <input type="text" name="nome" id="idNome" value={usuario.username} onChange={(e)=> setUsuario({...usuario, username: e.target.value})} placeholder="Digite o seu nome" required/>
+                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="text" name="nome" id="idNome" value={usuario.username} onChange={(e)=> setUsuario({...usuario, username: e.target.value})} placeholder="Digite o seu nome" required/>
               </div>
-              <div className="campo">
+              <div className="campo flex flex-col gap-10">
                   <label htmlFor="idSenha">Senha</label>
-                  <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite a sua senha" required/>
-                  <div className="mostrar">
+                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite a sua senha" required/>
+                  <div className="mostrar flex gap-3">
                     <h5>Mostrar Senha</h5>
                     <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
                       <input type="checkbox"/>
@@ -101,8 +101,8 @@ export default function Editar({params}: {params: { idUser: number }}) {
                   </div>
               </div>
               <h3 className={className}>{mensagemStatus}</h3>
-              <div className="btn">
-                  <button type="submit">Alterar Dados</button>
+              <div>
+                  <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">Alterar Dados</button>
               </div>
           </form>
         </aside>
