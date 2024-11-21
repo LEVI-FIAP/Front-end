@@ -13,6 +13,10 @@ const config: Config = {
         foreground: "var(--foreground)",
         telefone: "#E41B69",
         faq: "#E8E8E8",
+        dinheiro1: "#2D4C57",
+        dinheiro2: "#0F2024FF",
+        economia: "#D9C8D1",
+        payback: "#B8BDC8",
       },
       screens: {
         'phone': '200px',
@@ -27,6 +31,7 @@ const config: Config = {
         '105': '400px',
         '108': '460px',
         '110': '569px',
+        '115': '700px',
       },
       fontSize: {
         link: '16px',
