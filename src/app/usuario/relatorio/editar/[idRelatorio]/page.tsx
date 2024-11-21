@@ -4,6 +4,8 @@ import Link from "next/link"
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
+import fundo from "@/images/form-edit.png";
+import Image from "next/image";
 
 export default function Cadastrar({params}: {params: { idRelatorio: number }}) {
 
@@ -85,7 +87,10 @@ useEffect(() => {
 }
 
   return (
-    <main>
+    <main className="formularios">
+      <aside className="phone:max-xl:hidden">
+        <Image src={fundo} alt="form-edicao" className="h-101"/>
+      </aside>
       <aside className="formulario">
           <Link href="/">
             <SetaEsquerda />
@@ -118,12 +123,11 @@ useEffect(() => {
                   <input type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
               </div>
               <h3 className={className}>{mensagemStatus}</h3>
-              <div>
+              <div className="btn">
                   <button type="submit">Atualizar Dados</button>
               </div>
           </form>
         </aside>
-        <aside className="imagem"></aside>
     </main>
   )
 }

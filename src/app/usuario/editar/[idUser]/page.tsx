@@ -71,8 +71,8 @@ export default function Editar({params}: {params: { idUser: number }}) {
   return (
     <main className="formularios">
       <aside className="phone:max-xl:hidden">
-          <Image src={fundo} alt="form-edicao" className="h-101"/>
-        </aside>
+        <Image src={fundo} alt="form-edicao" className="h-101"/>
+      </aside>
       <aside className="formulario pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
 
           <Link className="voltar" href="/">
@@ -106,7 +106,6 @@ export default function Editar({params}: {params: { idUser: number }}) {
               </div>
           </form>
         </aside>
-        <aside className="imagem"></aside>
     </main>
   )
 }

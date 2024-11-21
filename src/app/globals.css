@@ -100,6 +100,10 @@
                     & input{
                         @apply bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60;
                     }
+
+                    & select{
+                        @apply bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60;
+                    }
                 }
 
                 & .btn{
