@@ -7,7 +7,7 @@
 
 ---
 
-Neste repositório está presente o desenvolvimento da entrega do challenge de 2024 da matéria **Front-End Design Engineering** da faculdade FIAP.
+Neste repositório está presente o desenvolvimento da entrega da segunda Global Solution de 2024 da matéria **Front-End Design Engineering** da faculdade FIAP.
 
 ### Membros do grupo:
 - Erick Alves - <a href="https://github.com/Erick0105">Erick0105</a> - Rm 5568682
@@ -16,23 +16,14 @@ Neste repositório está presente o desenvolvimento da entrega do challenge de 2
 
 ---
 #### Video
-Link do video - <a href="https://youtu.be/c2sKq0G0fag">Clique aqui para ver</a>
+Link do video - <a href="https://youtu.be/PkXg9ScyzIg">Clique aqui para ver</a>
 
 ---
 
 #### Vercel
-Link do vercel - <a href="https://autosense-sprint4-cyi0ok86a-ffukurous-projects.vercel.app/">Clique aqui para ver o site pela vercel</a>
+Link do vercel - <a href="https://levi-gs.vercel.app/">Clique aqui para ver o site pela vercel</a>
 
 ---
 
 #### Java
-Link do java repositório - <a href="https://github.com/Auto-Sense-Challenge/Java">Clique aqui para ver o site pela vercel</a>
-
----
-
-Dentro destes repósitorio estão presentes os seguintes arquivos:
-- Este readme para informações gerais;
-- Uma pasta **img-ale**, onde estão todas as 3 imagens utilizadas no readme
-- Uma pasta **auto-sense-react**, que seria o nosso boiler plate que contem todo o nosso projeto realizado em react
-
-
+Link do java repositório - <a href="https://github.com/LEVI-FIAP/Java">Clique aqui para ver o site pela vercel</a>
