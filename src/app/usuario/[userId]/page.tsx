@@ -4,13 +4,10 @@ import { FaPencilAlt as Lapis} from "react-icons/fa";
 import { TipoRelatorio, TipoUsuario} from "@/types";
 import { useEffect, useState } from "react";
 import Relatorios from "@/components/Relatorios/Relatorios";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Usuario({params}: {params: { userId: number }}) {
   
-  const navigate = useRouter();
-
   const [ usuario, setUsuario ] = useState<TipoUsuario>({
     id: params.userId,
     email: "",
