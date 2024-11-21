@@ -91,19 +91,19 @@ useEffect(() => {
       <aside className="phone:max-xl:hidden">
         <Image src={fundo} alt="form-edicao" className="h-101"/>
       </aside>
-      <aside className="formulario">
+      <aside className="formulario w-min pr-60 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
           <Link href="/">
             <SetaEsquerda />
             <h3>Dados</h3>
             <p>A maioria dos dados que pedimos esta presente na sua conta de luz!</p>
           </Link>
-          <form onSubmit={handleSubmit} className="formCadastro">
+          <form onSubmit={handleSubmit} className="formCad">
                 <h1>Dados</h1>
-              <div>
+              <div className="campo">
                   <label htmlFor="idTamanho">Tamanho disponivel da sua propriedade</label>
                   <input type="number" name="tamanho" id="idTamanho" value={relatorio.areaDesejada} onChange={(e)=> setRelatorio({...relatorio, areaDesejada:Number(e.target.value),}) } placeholder="Digite o tamanho em metros quadrados." required/>
               </div>
-              <div>
+              <div className="campo">
                   <label htmlFor="idRegiao">Região que esta localizado</label>
                   <select name="regiao" id="idRegiao" value={relatorio.idRegiao} onChange={(e) => setRelatorio({...relatorio, idRegiao:Number(e.target.value),})} required>
                     <option selected disabled value="">Escolha uma região</option>
@@ -114,11 +114,11 @@ useEffect(() => {
                     <option value="5">Sul</option>
                   </select>
               </div>
-              <div>
+              <div className="campo">
                   <label htmlFor="idConsumo">Consumo de Energia em kWh</label>
                   <input type="number" name="consumo" id="idConsumo" value={relatorio.consumoMensal} onChange={(e)=> setRelatorio({...relatorio, consumoMensal: Number(e.target.value)})} placeholder="Digite o quanto você consome de energia por mês" required/>
               </div>
-              <div>
+              <div className="campo">
                   <label htmlFor="idValor">Valor médio da conta de luz</label>
                   <input type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
               </div>
