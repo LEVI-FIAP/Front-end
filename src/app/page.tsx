@@ -6,43 +6,46 @@ import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import Link from "next/link";
 import BtnPgs from "@/components/BtnPgs/BtnPgs";
 import Carrossel from "@/components/Carrossel/Carrosel";
-import Responsavel from "@/images/home/responsaveis.png"
-import Pessoa from "@/images/home/pessoa.png"
+import ResponsavelImg from "@/images/home/responsaveis.png"
+import PessoaImg from "@/images/home/pessoa.png"
+import FaqImg from "@/images/home/faq.png"
+import LoginImg from "@/images/home/login.png"
+import CadastroImg from "@/images/home/cadastro.png"
 import { TipoCarrosel } from "@/types";
 
 export default function Home() {
 
   const listaSlide : TipoCarrosel[] = [
     {
-      img : Responsavel,
+      img : ResponsavelImg,
       subtitulo : "Conheça os responsaveis",
       texto : "Aqui você pode encontrar os responsaveis por planejar e criar LEVI",
       link : "/sobre",
       Icon : PessoasMark,
     },
     {
-      img : Pessoa,
+      img : PessoaImg,
       subtitulo : "Sobre nosso sistema",
       texto : "Aqui o usuário pode descobrir as ferramentas disponíveis em nosso site.",
       link : "/informacao",
       Icon : InformacaoMark,  
     },
     {
-      img : Pessoa,
+      img : FaqImg,
       subtitulo : "FAQ",
       texto : "Aqui você pode tirar algumas dúvidas sobre nosso sistema.",
       link : "/faq",
       Icon : QuestionMark,  
     },
     {
-      img : Pessoa,
+      img : LoginImg,
       subtitulo : "Login",
       texto : "Aqui o senhor(a) pode realizar um login para acessar os restos das nossas funções do nosso sistema.",
       link : "/usuario/login",
       Icon : LoginMark,  
     },
     {
-      img : Pessoa,
+      img : CadastroImg,
       subtitulo : "Cadastro",
       texto : "Aqui você pode cadastrar um usúario para ter acesso as nossas funções.",
       link : "/usuario/cadastro",
@@ -57,9 +60,9 @@ export default function Home() {
         <p className="w-96 phone:max-md:w-auto">Embarque nessa experiencia para descobrir como ajudar e melhorar a saúde do nosso planeta!!</p>
         <Link href="/usuario/login" className="bg-red-950 w-max px-5 py-2 rounded-lg phone:max-md:w-auto">Aperte Aqui para Começar</Link>
         <div className="link flex gap-5 border-t-2 border-white w-96 pt-10 mt-16 phone:max-md:w-auto">
-          <h6>Conheça tudo sobre LEVI</h6>
           <Link href="/informacao">
-          <SetaDireita className="relative top-1 text-red-800 "/>
+            <h6>Conheça tudo sobre LEVI</h6>
+            <SetaDireita className="relative top-1 text-red-800 "/>
           </Link>
         </div>
       </div>

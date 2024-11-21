@@ -1,15 +1,22 @@
 "use client"
 import BtnPgs from "@/components/BtnPgs/BtnPgs";
 import { FaPencilAlt as Lapis} from "react-icons/fa";
-import { TipoRelatorio} from "@/types";
+import { TipoRelatorio, TipoUsuario} from "@/types";
 import { useEffect, useState } from "react";
 import Relatorios from "@/components/Relatorios/Relatorios";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Usuario({params}: {params: { userId: number }}) {
   
   const navigate = useRouter();
 
+  const [ usuario, setUsuario ] = useState<TipoUsuario>({
+    id: params.userId,
+    email: "",
+    senha: "",
+    username: "",
+  })
 
   const [relatorios, setRelatorios] = useState<TipoRelatorio[]>([{
     id: 0,
@@ -27,6 +34,9 @@ export default function Usuario({params}: {params: { userId: number }}) {
   }]);
 
   const [deletarModal, setDeletarModal] = useState(false);
+  const [erroRelatorio, setErroRelatorio] = useState<string | null>(null)
+  const [erroUsuario, setErroUsuario] = useState<string | null>(null)
+  const [usuarioDeletado, setUsuarioDeletado] = useState<string | null>(null)
 
   const mudarModal = () => {
     setDeletarModal(false);
@@ -38,9 +48,30 @@ export default function Usuario({params}: {params: { userId: number }}) {
   useEffect(() => {
         
     const chamadaApi = async () =>{
-        const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/reports?user=${params.userId}`);
-        const dados = await response.json();
-        setRelatorios(dados);
+      try{
+        const respostaUsuario = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/${params.userId}`);
+
+        if(!respostaUsuario.ok){
+          throw new Error("Não existe usuario com este ID");
+        }
+        const dadosUsuario = await respostaUsuario.json();
+        setUsuario(dadosUsuario);
+        setErroUsuario(null)
+        try {
+          const respostaRelatorio = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/reports?user=${params.userId}`);
+          
+          if(!respostaRelatorio.ok){
+            throw new Error("Este Usuario não possui relatorios");
+          }
+          const dadosRelatorio = await respostaRelatorio.json();
+          setRelatorios(dadosRelatorio);
+          setErroRelatorio(null)
+        } catch (error){
+          setErroRelatorio((error as Error).message)
+        }
+      } catch (error) {
+        setErroUsuario((error as Error).message)
+      }
     }
 
     chamadaApi();
@@ -49,28 +80,42 @@ export default function Usuario({params}: {params: { userId: number }}) {
 
 const handleDelete = async ()=>{
   try {
-      
-      const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/${params.userId}`,{
-          method:"DELETE",
-          headers:{
-              "Content-Type":"application/json"
-              }
-      });
+    const NomeUser = usuario.username
+    const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/${params.userId}`,{
+        method:"DELETE",
+        headers:{
+            "Content-Type":"application/json"      
+    }});
+    if(response.ok){
+      setUsuarioDeletado(`Usuario ${NomeUser} deletado com sucesso`)
+    }
 
-      if(response.ok){
-        console.log("Usuario deletado com sucesso")
-        navigate.push("/");
-
-      }
 
   } catch (error) {
       console.error("Falha ao deletar usuario: ", error);
   }
 }
+if (usuarioDeletado){
+  return (
+    <main className="usuarioDeletado">
+      <p>{usuarioDeletado}</p>
+    </main>
+  )
+}
+
+if (erroUsuario){
+  return (
+    <main className="usuarioInvalido">
+      <h1>Erro ao validar Usuario</h1>
+      <p>{erroUsuario}</p>
+      <Link href="/">Voltar para Home</Link>
+    </main>
+  )
+}
     return (
     <main className="flex flex-col gap-14">
         <div className="intro bg-[url('../assets/fundo-usu.png')] bg-cover bg-center text-white px-20 py-36 flex flex-col gap-10 font-bold text-2xl phone:max-md:text-lg phone:max-md:px-2">
-          <h1 className="text-5xl">Usuario</h1>
+          <h1 className="text-5xl">{usuario.username}</h1>
           <p className="w-96 phone:max-sm:w-auto">Seja Bem vindo a página feita para você! Analíse e utilize das ferramentas que criamos especialmente para você usuario</p>
         </div>
         <div className="meio flex flex-col gap-20">
@@ -102,11 +147,18 @@ const handleDelete = async ()=>{
           <div className="botaoUsu">
             <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar/${params.userId}`}/>
           </div>
-          <div className="carrosel">
+          {erroRelatorio ? (
+            <div className="relatorioStatus">
+              <h6>Você Ainda não possui Relatorios</h6>
+            </div>
+          ) : (
+
+            <div className="relatorios">
             {relatorios.map((relatorio) => (
               <Relatorios key={relatorio.id} idRelatorio={relatorio.id}/>
             ))}
-          </div>
+            </div>
+          )}
         </div>
     </main>)
   }

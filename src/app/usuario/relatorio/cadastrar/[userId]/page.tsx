@@ -80,7 +80,7 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
       <aside className="formulario w-min pr-60 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
           <Link className="voltar" href="/">
             <SetaEsquerda className="seta"/>
-            <h3>Dados</h3>
+            <h3>Home</h3>
           </Link>
           <form onSubmit={handleSubmit} className="formCad">
               <p className="font-normal">A maioria dos dados que pedimos esta presente na sua conta de luz!</p>
