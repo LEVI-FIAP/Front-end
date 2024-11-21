@@ -77,7 +77,7 @@ export default function Login() {
                   <div className="campo flex flex-col gap-10">
                       <label htmlFor="idSenha">Sua senha</label>
                       <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
-                      <div className="mostrar">
+                      <div className="mostrar flex gap-3">
                         <h5>Mostrar Senha</h5>
                         <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
                             <input type="checkbox"/>
@@ -90,8 +90,8 @@ export default function Login() {
                     <SetaDireita />
                   </Link>
                   <h3 className={className}>{mensagemStatus}</h3>
-                  <div className="btn flex justify-center bg-gray-600 text-white py-2">
-                      <button type="submit">entrar</button>
+                  <div>
+                      <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40" type="submit">entrar</button>
                   </div>
               </form>
         </aside>
