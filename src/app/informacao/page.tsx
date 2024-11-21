@@ -1,7 +1,6 @@
 import PaineisSolares from "@/images/info/paineis-solares.png"
 import PaineisSolaresCima from "@/images/info/paineis-solares-cima.png"
 import LeviInvert from "@/images/info/levi-logo-invertida.png"
-import Pessoa from "@/images/home/pessoa.png"
 import Image from "next/image";
 import Link from "next/link";
 
