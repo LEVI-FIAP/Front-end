@@ -3,11 +3,13 @@ import PainelImg from "@/images/relatorio/painel.png"
 import MoedasImg from "@/images/relatorio/moedas.png"
 import CofrinhoImg from "@/images/relatorio/cofrinho.png"
 import DinheiroImg from "@/images/relatorio/dinheiro.png"
+import { FaPencilAlt as Lapis} from "react-icons/fa";
 import { TipoRelatorio } from "@/types";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaArrowCircleRight as SetaDireita} from "react-icons/fa";
 import Image from "next/image";
+import BtnPgs from "@/components/BtnPgs/BtnPgs"
 
   export default function Usuario({params}: {params: {relatorioId: number }}) {
 
@@ -66,8 +68,8 @@ if (erro) {
             <p>Veja os detalhes e contas que utilizamos para o descobrimento do seu investimento no sistema solar</p>
 
             <div className="link">
-              <Link href={`/usuario/${relatorio.idUsuario}`}></Link>
-                <h6>Veja todos os seus relatorios</h6>
+              <Link href={`/usuario/relatorio/editar/${params.relatorioId}`}></Link>
+                <h6>Editar Relatorio</h6>
                 <SetaDireita/>
             </div>
           </aside>
@@ -142,6 +144,7 @@ if (erro) {
 
         </div>
         <div className="fim">
+          <BtnPgs Icon={Lapis} texto="Editar Relatorio" link={`/usuario/relatorio/editar/${params.relatorioId}`}/>
           <aside className="txt">
             <p>Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
             <div className="link">
