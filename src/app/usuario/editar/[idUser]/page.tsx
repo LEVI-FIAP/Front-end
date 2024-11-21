@@ -4,6 +4,8 @@ import Link from "next/link"
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
+import fundo from "@/images/form-edit.png";
+import Image from "next/image";
 
 export default function Editar({params}: {params: { idUser: number }}) {
 
@@ -67,32 +69,39 @@ export default function Editar({params}: {params: { idUser: number }}) {
 }
 
   return (
-    <main>
-      <aside className="formulario">
-          <Link href="/">
-            <SetaEsquerda />
+    <main className="formularios">
+      <aside className="phone:max-xl:hidden">
+          <Image src={fundo} alt="form-edicao" className="h-101"/>
+        </aside>
+      <aside className="formulario pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
+
+          <Link className="voltar" href="/">
+            <SetaEsquerda className="seta"/>
             <h3>Home</h3>
           </Link>
-          <form onSubmit={handleSubmit} className="formCadastro">
+
+          <form onSubmit={handleSubmit} className="formCad">
                 <h1>Cadastro</h1>
-              <div>
+              <div className="campo">
                   <label htmlFor="idEmail">Email</label>
                   <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite o seu email." required/>
               </div>
-              <div>
+              <div className="campo">
                   <label htmlFor="idNome">Nome</label>
                   <input type="text" name="nome" id="idNome" value={usuario.username} onChange={(e)=> setUsuario({...usuario, username: e.target.value})} placeholder="Digite o seu nome" required/>
               </div>
-              <div>
+              <div className="campo">
                   <label htmlFor="idSenha">Senha</label>
                   <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite a sua senha" required/>
-                  <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
-                    <input type="checkbox"/>
-                  </button>
-                  <h5>Mostrar Senha</h5>
+                  <div className="mostrar">
+                    <h5>Mostrar Senha</h5>
+                    <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
+                      <input type="checkbox"/>
+                    </button>
+                  </div>
               </div>
               <h3 className={className}>{mensagemStatus}</h3>
-              <div>
+              <div className="btn">
                   <button type="submit">Cadastrar</button>
               </div>
           </form>
