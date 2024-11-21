@@ -68,15 +68,15 @@ export default function Login() {
                 <h3>Home</h3>
             </Link>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="formCad flex flex-col gap-10">
                 <h1 className="text-4xl phone:max-sm:text-2xl">Login</h1>
-                  <div>
+                  <div className="campo flex flex-col gap-10">
                       <label htmlFor="idEmail">Seu email</label>
-                      <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
+                      <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
                   </div>
-                  <div>
+                  <div className="campo flex flex-col gap-10">
                       <label htmlFor="idSenha">Sua senha</label>
-                      <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
+                      <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                       <div className="mostrar">
                         <h5>Mostrar Senha</h5>
                         <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
@@ -85,12 +85,12 @@ export default function Login() {
                       </div>
                   </div>
                   <h4>Não possui cadastro?</h4>
-                  <Link href="/usuario/cadastro">
+                  <Link href="/usuario/cadastro" className="flex gap-5">
                     <h6>Aperte aqui para criar uma conta</h6>
                     <SetaDireita />
                   </Link>
                   <h3 className={className}>{mensagemStatus}</h3>
-                  <div>
+                  <div className="btn flex justify-center bg-gray-600 text-white py-2">
                       <button type="submit">entrar</button>
                   </div>
               </form>
