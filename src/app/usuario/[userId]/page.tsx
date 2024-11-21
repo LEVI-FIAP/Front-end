@@ -126,7 +126,7 @@ if (erroUsuario){
           
         </div>
 
-        <div className="relatorios">
+        <div className="relatorios px-10">
             <h5>Aperte o botão abaixo para editar seus dados</h5>
             <div className="botaoUsu">
               <BtnPgs Icon={Lapis} texto="Editar Meus dados" link={`/usuario/editar/${params.userId}`}/>
@@ -140,22 +140,25 @@ if (erroUsuario){
         </dialog>
 
         <div className="relatorios">
-          <h5>Aperte o botão abaxio para criar um relatório</h5>
-          <div className="botaoUsu">
+          <h5 className="px-10">Aperte o botão abaxio para criar um relatório</h5>
+          <div className="botaoUsu px-10">
             <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar/${params.userId}`}/>
           </div>
-          {erroRelatorio ? (
-            <div className="relatorioStatus">
-              <h6>Você Ainda não possui Relatorios</h6>
-            </div>
-          ) : (
+        </div>
 
-            <div>
-            {relatorios.map((relatorio) => (
-              <Relatorios key={relatorio.id} idRelatorio={relatorio.id}/>
-            ))}
-            </div>
-          )}
+        <div>
+          {erroRelatorio ? (
+              <div className="relatorioStatus px-10">
+                <h6>Você Ainda não possui Relatorios</h6>
+              </div>
+            ) : (
+
+              <div className=" bg-black py-10 px-10">
+                {relatorios.map((relatorio) => (
+                  <Relatorios key={relatorio.id} idRelatorio={relatorio.id}/>
+                ))}
+              </div>
+            )}  
         </div>
     </main>)
   }

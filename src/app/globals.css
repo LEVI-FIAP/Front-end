@@ -65,7 +65,7 @@
     }
 
     & .relatorios{
-        @apply flex flex-col gap-10 px-10;
+        @apply flex flex-col gap-10;
         & .botaoUsu{
             @apply w-max ;
         }

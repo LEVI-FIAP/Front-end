@@ -11,7 +11,7 @@ import ImgRelatorio from "@/images/user/img-relatorio.png";
 export default function Relatorios ({idRelatorio} : {idRelatorio:number}) {
     
   return (
-    <div className='bg-black'>
+    <div>
       <Swiper modules = {[Autoplay]} spaceBetween={300} slidesPerView={2} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
         delay: 2500, 
         disableOnInteraction: false, 
