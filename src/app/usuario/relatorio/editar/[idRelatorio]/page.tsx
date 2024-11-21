@@ -1,7 +1,7 @@
 "use client"
 import { TipoRelatorio} from "@/types";
 import Link from "next/link"
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 import fundo from "@/images/form-edit.png";
