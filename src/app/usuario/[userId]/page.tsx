@@ -127,7 +127,7 @@ if (erroUsuario){
             <div className="botaoUsu">
               <BtnPgs Icon={Lapis} texto="Editar Meus dados" link={`/usuario/editar/${params.userId}`}/>
             </div>
-            <button onClick={() => mudarModal()}>Deletar Usuario</button>
+            <button className="flex" onClick={() => mudarModal()}>Deletar Usuario</button>
         </div>      
         <dialog open={deletarModal}>
           <button onClick={() => mudarModal()}>X</button>
