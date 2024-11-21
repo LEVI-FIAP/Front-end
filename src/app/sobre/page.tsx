@@ -14,13 +14,13 @@ export default function Sobre() {
       <div className="criadores flex flex-col gap-10 font-bold">
         <div className="px-10 flex flex-col gap-10">
           <div className="flex">
-            <h2 className="text-4xl">Criadores de LEVI</h2>
-            <Image src={PainelSolar} alt="painel-solar" className="phone:max-md:w-7"/>
+            <h2 className="text-4xl phone:max-sm:text-3xl">Criadores de LEVI</h2>
+            <Image src={PainelSolar} alt="painel-solar" className="phone:max-sm:w-7 phone:max-sm:h-10"/>
           </div>
-          <h5 className="text-2xl">Turma: 1TDSPM</h5>
+          <h5 className="text-2xl phone:max-sm:text-lg">Turma: 1TDSPM</h5>
         </div>
 
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-20 phone:max-sm:text-lg">
           <figure className="bg-[url('../assets/erick-img.png')] bg-cover bg-center bg-no-repeat phone:max-md:bg-left">
             <figcaption className="pessoa justify-self-end phone:max-md:justify-self-start">
               <h3>Erick Alves Xavier dos Santos</h3>

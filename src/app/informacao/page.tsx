@@ -1,11 +1,11 @@
 import PaineisSolares from "@/images/info/paineis-solares.png"
 import PaineisSolaresCima from "@/images/info/paineis-solares-cima.png"
 import LeviInvert from "@/images/info/levi-logo-invertida.png"
-import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Informacao() {
+
   return (
     <main className="informacao flex flex-col gap-80">
       <div className="bg-[url('../assets/fundo.png')] bg-cover bg-center">
@@ -31,13 +31,8 @@ export default function Informacao() {
         <div className="link">
           <Link href="/sobre" className="flex py-10 border-t-2 border-white w-96 gap-10 phone:max-sm:w-auto">
             <h6 className="font-normal">click aqui para conhecê los</h6>
-            <SetaDireita className="text-red-600 relative top-1"/>
           </Link>
         </div>
-      </div>
-      <div className="consideracoes">
-        <h2>Considerações Finais</h2>
-        <p>Viemos aqui para agradecer a cada professor que nos acompanhou durante essa jornada. Eles nos ajudaram a crescer e evoluir como pessoas, estudantes e futuros profissionais. Somos gratos por cada segundo que cada um dedicou a nós. O que somos capazes de fazer hoje é resultado do apoio e da ajuda de vocês. Foi incrível e divertido ter compartilhado esse tempo ao lado de cada um. Então, mais uma vez, muito obrigado!</p>
       </div>
     </main>
   )

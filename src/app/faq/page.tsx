@@ -33,9 +33,9 @@ export default function Faq() {
             <Telefone className="relative top-1 text-telefone" />
           </a>
         </div>
-        <Image src={DuvidaImg} alt="img-duvida" className="absolute top-40 right-8 phone:max-lg:z-0 phone:max-lg:opacity-40"/>
+        <Image src={DuvidaImg} alt="img-duvida" className="absolute top-40 right-8 phone:max-lg:z-0 phone:max-lg:opacity-40 z-10"/>
       </div>
-      <div className="perguntas flex flex-col px-48 gap-20 bg-faq py-20 font-bold phone:max-lg:px-10">
+      <div className="perguntas flex flex-col px-48 gap-24 bg-faq py-28 font-bold phone:max-lg:px-10">
         <h1 className="text-center text-5xl">FAQ&apos;s</h1>
         <div className="pergunta">
           <div className="duvida">

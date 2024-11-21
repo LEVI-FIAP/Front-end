@@ -8,21 +8,25 @@ export default function Menu() {
   return (
     <div className="opUser">
         <div className="logo">
-          <Image src={LeviLogoInvert} alt="logo-levi-invert"/>
+          <Image src={LeviLogoInvert} alt="logo-levi-invert" className="bg-white bg-cover bg-center"/>
         </div>
-        <div className="opcoes">
+        
+        <div className="opcoes flex flex-col text-white">
           
-          <User/>
+          <User className="relative left-40 text-8xl text-gray-500 bottom-14 phone:max-sm:left-0"/>
 
-          <div className="recepcao">
-            <h3>Bem Vindo!!</h3>
+          <div className="pb-20 px-10 flex flex-col gap-10">
+            <div className="recepcao text-center border-b-2 border-gray-400 p-5">
+              <h3>Bem Vindo!!</h3>
+            </div>
+
+            <nav className="flex flex-col gap-10">
+              <Link href="/usuario/login">Logar</Link>
+              <Link href="/usuario/cadastro">Cadastrar</Link>
+            </nav>
           </div>
 
-          <nav>
-            <Link href="/usuario/login">Logar</Link>
-            <Link href="/usuario/cadastro">Cadastrar</Link>
-          </nav>
-        </div>
+        </div> 
     </div>
   )
 }
