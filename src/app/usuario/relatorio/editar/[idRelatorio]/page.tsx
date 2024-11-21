@@ -31,7 +31,7 @@ const navigate = useRouter();
 
 useEffect(() => {
     const chamarApi = async () =>{
-        const response = await fetch(`http://localhost:8080/gslevi_war/reports/${params.idRelatorio}`);
+        const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/reports/${params.idRelatorio}`);
         const dados = await response.json();
         setRelatorio(dados)
     }
@@ -42,7 +42,7 @@ useEffect(() => {
     e.preventDefault();
     try {
         
-        const response = await fetch(`http://localhost:8080/gslevi_war/reports/${params.idRelatorio}`,{
+        const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/reports/${params.idRelatorio}`,{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
