@@ -61,7 +61,7 @@ export default function Login() {
             <Image src={paisagem} alt="Paisagem" className="h-101"/>
         </aside>
 
-        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0 flex flex-col gap-20 pb-5">
+        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
             
             <Link className="voltar" href="/">
                 <SetaEsquerda className="seta"/>
@@ -70,11 +70,11 @@ export default function Login() {
 
             <form onSubmit={handleSubmit} className="formCad">
                 <h1>Login</h1>
-                  <div className="campo">
+                  <div className="campo flex flex-col gap-10">
                       <label htmlFor="idEmail">Seu email</label>
                       <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
                   </div>
-                  <div className="campo">
+                  <div className="campo flex flex-col gap-10">
                       <label htmlFor="idSenha">Sua senha</label>
                       <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                       <div className="mostrar">
