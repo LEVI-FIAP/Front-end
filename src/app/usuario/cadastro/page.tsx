@@ -63,9 +63,7 @@ export default function Cadastro() {
       <aside className="formulario  pl-40 pt-10 phone:max-xl:pl-5">
 
           <SetaEsquerda />
-          <Link href="/">
-            <h3>Home</h3>
-          </Link>
+          <Link href="/">Home</Link>
           <form onSubmit={handleSubmit} className="formCadastro">
                 <h1>Cadastro</h1>
               <div>
@@ -88,9 +86,7 @@ export default function Cadastro() {
                   <h5>Mostrar Senha</h5>
               </div>
               <h4>Já tem uma conta?</h4>
-              <link href="/usuario/login">
-                <h6>Aperte aqui para logar</h6>
-              </link>
+              <link href="/usuario/login">Aperte aqui para logar</link>
               <h3 className={className}>{mensagemStatus}</h3>
               <div>
                   <button type="submit">Cadastrar</button>
