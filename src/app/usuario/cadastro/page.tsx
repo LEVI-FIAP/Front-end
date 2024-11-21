@@ -103,7 +103,7 @@ export default function Cadastro() {
           </form>
       </aside>
       <aside className="phone:max-xl:hidden ">
-        <Image src={paisagem} alt="Paisagem" className="h-101"/>
+        <Image src={paisagem} alt="Paisagem" className="h-101 w-101"/>
       </aside>
     </main>
   )
