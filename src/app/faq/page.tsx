@@ -38,7 +38,7 @@ export default function Faq() {
       <div className="perguntas flex flex-col px-48 gap-24 bg-faq py-28 font-bold phone:max-lg:px-10">
         <h1 className="text-center text-5xl">FAQ&apos;s</h1>
         <div className="pergunta">
-          <div className="duvida">
+          <div className="duvida flex justify-between text-3xl px-5">
             <h3>Por que utilizar?</h3>
             <button onClick={()=> mudarModal(1)} className={`${modaisAbertos[1] ? "aberto": "fechado"}`}><Seta/></button>
           </div>
@@ -48,7 +48,7 @@ export default function Faq() {
         </div>
 
         <div className="pergunta">
-          <div className="duvida">
+          <div className="duvida flex justify-between text-3xl px-5">
             <h3>Como Cadastrar?</h3>
             <button onClick={()=> mudarModal(2)} className={`${modaisAbertos[2] ? "aberto": "fechado"}`}><Seta/></button>
           </div>
@@ -58,7 +58,7 @@ export default function Faq() {
         </div>
 
         <div className="pergunta">
-          <div className="duvida">
+          <div className="duvida flex justify-between text-3xl px-5">
             <h3>Como eu vejo os meus dados?</h3>
             <button onClick={()=> mudarModal(3)} className={`${modaisAbertos[3] ? "aberto": "fechado"}`}><Seta/></button>
           </div>

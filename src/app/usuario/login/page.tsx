@@ -38,7 +38,9 @@ export default function Login() {
                 senha: usuario.senha,
             })
         });
-
+        if(!response.ok){
+            throw new Error("Email ou Senha Invalidos")
+        }
         if(response.ok){
             const user = await response.json();
             setMensagem("Login feito com sucesso")
@@ -48,36 +50,35 @@ export default function Login() {
         
         
     } catch (erro) {
-        const msg = "Erro:" + erro
-        setMensagem(msg)
+        setMensagem(erro + ".")
         setClassName("text-red-500")
         console.error("Falha ao logar: ", erro);
     }
 }
 
   return (
-    <main className="formularios">
+    <main className="formularios flex text-2xl font-bold justify-between phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
         <aside className="phone:max-xl:hidden">
-            <Image src={paisagem} alt="Paisagem" className="h-101"/>
+            <Image src={paisagem} alt="Paisagem" className="h-101 w-101"/>
         </aside>
 
-        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
+        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0 flex flex-col gap-20 pb-5">
             
-            <Link className="voltar" href="/">
-                <SetaEsquerda className="seta"/>
+            <Link className="voltar flex gap-4" href="/">
+                <SetaEsquerda className="seta relative top-1"/>
                 <h3>Home</h3>
             </Link>
 
-            <form onSubmit={handleSubmit} className="formCad">
-                <h1>Login</h1>
-                  <div className="campo">
+            <form onSubmit={handleSubmit} className="formCad flex flex-col gap-10">
+                <h1 className="text-4xl phone:max-sm:text-2xl">Login</h1>
+                  <div className="campo flex flex-col gap-10">
                       <label htmlFor="idEmail">Seu email</label>
-                      <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
+                      <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
                   </div>
-                  <div className="campo">
+                  <div className="campo flex flex-col gap-10">
                       <label htmlFor="idSenha">Sua senha</label>
-                      <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
-                      <div className="mostrar">
+                      <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
+                      <div className="mostrar flex gap-3">
                         <h5>Mostrar Senha</h5>
                         <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
                             <input type="checkbox"/>
@@ -86,12 +87,12 @@ export default function Login() {
                   </div>
                   <h4>Não possui cadastro?</h4>
                   <Link href="/usuario/cadastro" className="flex gap-5">
-                    <h6>Aperte aqui para criar uma conta</h6>
+                    <h5>Aperte aqui para criar uma conta</h5>
                     <SetaDireita />
                   </Link>
                   <h3 className={className}>{mensagemStatus}</h3>
-                  <div className="btn">
-                      <button type="submit">entrar</button>
+                  <div>
+                      <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">entrar</button>
                   </div>
               </form>
         </aside>
