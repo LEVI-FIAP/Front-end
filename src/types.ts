@@ -45,11 +45,3 @@ export type TipoCarrosel = {
     link : string;
     Icon : IconType;
 }
-
-export type TipoProfessor = {
-    img : string | StaticImageData;
-    nome : string;
-    materia : string;
-    github: string;
-    linkedin: string;
-}
