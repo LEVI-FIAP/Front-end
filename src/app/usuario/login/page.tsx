@@ -50,8 +50,7 @@ export default function Login() {
         
         
     } catch (erro) {
-        const msg = "Erro:" + erro
-        setMensagem(msg)
+        setMensagem(erro + ".")
         setClassName("text-red-500")
         console.error("Falha ao logar: ", erro);
     }
