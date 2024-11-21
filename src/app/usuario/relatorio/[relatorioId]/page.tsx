@@ -61,7 +61,7 @@ if (erro) {
   )
 }
     return (
-      <main>
+      <main className="flex flex-col gap-10">
         <div className="intro bg-[url('../assets/fundo-relatorio.png')] bg-cover bg-center text-white px-20 py-32 flex flex-col gap-10 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2">
           <aside className="txt">
             <h1>Relatório {params.relatorioId}</h1>
@@ -134,17 +134,19 @@ if (erro) {
           </div>
 
         </div>
-        <div className="fim">
+
+        <div className="w-60 pl-10">
           <BtnPgs Icon={Lapis} texto="Editar Relatorio" link={`/usuario/relatorio/editar/${params.relatorioId}`}/>
-          <aside className="txt">
-            <p>Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
-            <div className="link">
-              <Link href={`/usuario/${relatorio.idUsuario}`}>
-                <h6>Voltar para a página de usuario</h6>
-                <SetaDireita/>
+        </div>
+
+        <div className="bg-[url('../assets/fundo-relatorio-2.png')] bg-cover bg-center text-white px-20 py-10 flex flex-col gap-14 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2 phone:max-lg:pt-20">
+          <p className="w-110 phone:max-md:w-80">Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
+          <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10">
+            <h6>Voltar para a página de usuario</h6>
+            <Link href={`/usuario/${relatorio.idUsuario}`} className="relative top-1 text-red-600">
+              <SetaDireita/>
               </Link>
             </div>
-          </aside>
         </div>
 
       </main>
