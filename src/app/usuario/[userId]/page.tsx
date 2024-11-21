@@ -8,7 +8,20 @@ import Relatorios from "@/components/Relatorios/Relatorios";
 export default function Usuario({params}: {params: { userId: number }}) {
   
 
-  const [relatorios, setRelatorios] = useState<TipoRelatorio[]>([]);
+  const [relatorios, setRelatorios] = useState<TipoRelatorio[]>({
+    id: 0,
+    consumoMensal: 0,
+    contaLuz: 0,
+    areaDesejada: 0,
+    qtdPaineis: 0,
+    potenciaTotal: 0,
+    custoInstalacao: 0,
+    economiaMensal: 0,
+    payback: 0,
+    energiaMes: 0,
+    idRegiao: 0,
+    idUsuario: params.userId,
+  });
 
   const [deletarModal, setDeletarModal] = useState(false);
 
