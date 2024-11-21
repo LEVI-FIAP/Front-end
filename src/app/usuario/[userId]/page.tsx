@@ -153,7 +153,7 @@ if (erroUsuario){
               </div>
             ) : (
 
-              <div className=" bg-black py-10 px-10">
+              <div>
                 {relatorios.map((relatorio) => (
                   <Relatorios key={relatorio.id} idRelatorio={relatorio.id}/>
                 ))}
