@@ -40,7 +40,7 @@ import Image from "next/image";
 
     return (
       <main>
-        <div className="intro">
+        <div className="intro bg-[url('../assets/fundo-relatorio.png')] bg-cover bg-center text-white px-20 py-32 flex flex-col gap-10 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2">
           <aside className="txt">
             <h1>Relatório {params.relatorioId}</h1>
             <p>Veja os detalhes e contas que utilizamos para o descobrimento do seu investimento no sistema solar</p>
