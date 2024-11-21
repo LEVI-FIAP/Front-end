@@ -38,7 +38,9 @@ export default function Login() {
                 senha: usuario.senha,
             })
         });
-
+        if(!response.ok){
+            throw new Error("Email ou Senha Invalidos")
+        }
         if(response.ok){
             const user = await response.json();
             setMensagem("Login feito com sucesso")
@@ -48,8 +50,7 @@ export default function Login() {
         
         
     } catch (erro) {
-        const msg = "Erro:" + erro
-        setMensagem(msg)
+        setMensagem(erro + ".")
         setClassName("text-red-500")
         console.error("Falha ao logar: ", erro);
     }
