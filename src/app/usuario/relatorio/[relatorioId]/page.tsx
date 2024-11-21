@@ -26,18 +26,38 @@ import Image from "next/image";
       idUsuario: 0,
     })
 
+    const [erro, setErro] = useState<string|null>(null);
+
     useEffect(() => {
         
       const chamadaApi = async () =>{
+        try{
+
           const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/reports/${params.relatorioId}`);
+          
+          if(!response.ok){
+            throw new Error("Não existe relatorio com este ID");
+          }
           const dados = await response.json();
           setRelatorio(dados);
+        } catch (error){
+          setErro((error as Error).message)
+        }
       }
   
       chamadaApi();
   
   }, [params.relatorioId])
 
+if (erro) {
+  return (
+    <main className="usuarioInvalido">
+      <h1>Erro ao validar Relatorio</h1>
+      <p>{erro}</p>
+      <Link href="/">Voltar para Home</Link>
+    </main>
+  )
+}
     return (
       <main>
         <div className="intro bg-[url('../assets/fundo-relatorio.png')] bg-cover bg-center text-white px-20 py-32 flex flex-col gap-10 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2">

@@ -36,6 +36,7 @@ export default function Usuario({params}: {params: { userId: number }}) {
   const [deletarModal, setDeletarModal] = useState(false);
   const [erroRelatorio, setErroRelatorio] = useState<string | null>(null)
   const [erroUsuario, setErroUsuario] = useState<string | null>(null)
+  const [usuarioDeletado, setUsuarioDeletado] = useState<string | null>(null)
 
   const mudarModal = () => {
     setDeletarModal(false);
@@ -79,21 +80,27 @@ export default function Usuario({params}: {params: { userId: number }}) {
 
 const handleDelete = async ()=>{
   try {
-      
-      const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/${params.userId}`,{
-          method:"DELETE",
-          headers:{
-              "Content-Type":"application/json"
-              }
-      });
+    const NomeUser = usuario.username
+    const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/${params.userId}`,{
+        method:"DELETE",
+        headers:{
+            "Content-Type":"application/json"      
+    }});
+    if(response.ok){
+      setUsuarioDeletado(`Usuario ${NomeUser} deletado com sucesso`)
+    }
 
-      if(response.ok){
-        navigate.push("/");
-      }
 
   } catch (error) {
       console.error("Falha ao deletar usuario: ", error);
   }
+}
+if (usuarioDeletado){
+  return (
+    <main className="usuarioDeletado">
+      <p>{usuarioDeletado}</p>
+    </main>
+  )
 }
 
 if (erroUsuario){
