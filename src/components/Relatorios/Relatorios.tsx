@@ -5,7 +5,7 @@ import { LiaChartBarSolid as Barras } from "react-icons/lia";
 import { Autoplay } from 'swiper/modules'
 import Image from 'next/image';
 import Link from 'next/link';
-import ImgRelatorio from "@/images/user/img-relatorio.png"
+import ImgRelatorio from "@/images/user/img-relatorio.png";
 
 
 export default function Relatorios ({idRelatorio} : {idRelatorio:number}) {
