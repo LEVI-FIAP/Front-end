@@ -14,7 +14,6 @@
         & .perguntas{
 
             & .duvida{
-                @apply flex justify-between text-3xl px-5;
 
                 & button{
                     @apply -rotate-90;
