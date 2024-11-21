@@ -56,12 +56,12 @@ export default function Login() {
 }
 
   return (
-    <main className="formularios flex text-2xl font-bold justify-between gap-10 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
+    <main className="formularios">
         <aside className="phone:max-xl:hidden">
             <Image src={paisagem} alt="Paisagem" className="h-101"/>
         </aside>
 
-        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
+        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0 flex flex-col gap-20 pb-5">
             
             <Link className="voltar" href="/">
                 <SetaEsquerda className="seta"/>
