@@ -47,8 +47,8 @@ import Image from "next/image";
 
             <div className="link">
               <Link href={`/usuario/${relatorio.idUsuario}`}></Link>
-              <h6>Veja todos os seus relatorios</h6>
-              <SetaDireita/>
+                <h6>Veja todos os seus relatorios</h6>
+                <SetaDireita/>
             </div>
           </aside>
           <aside className="graficos">

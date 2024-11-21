@@ -3,6 +3,7 @@ import { TipoUsuario } from "@/types";
 import Link from "next/link"
 import { useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
+import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import paisagem from "@/images/cadastro-login.png";
 import Image from "next/image";
 
@@ -91,7 +92,10 @@ export default function Cadastro() {
                   </div>
               </div>
               <h4>Já tem uma conta?</h4>
-              <Link href="/usuario/login">Aperte aqui para logar</Link>
+              <Link href="/usuario/login">
+                <h5>Aperte aqui para logar</h5>
+                <SetaDireita/>
+              </Link>
               <h3 className={className}>{mensagemStatus}</h3>
               <div>
                   <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">Cadastrar</button>

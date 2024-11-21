@@ -60,9 +60,9 @@ export default function Home() {
         <p className="w-96 phone:max-md:w-auto">Embarque nessa experiencia para descobrir como ajudar e melhorar a saúde do nosso planeta!!</p>
         <Link href="/usuario/login" className="bg-red-950 w-max px-5 py-2 rounded-lg phone:max-md:w-auto">Aperte Aqui para Começar</Link>
         <div className="link flex gap-5 border-t-2 border-white w-96 pt-10 mt-16 phone:max-md:w-auto">
-          <h6>Conheça tudo sobre LEVI</h6>
           <Link href="/informacao">
-          <SetaDireita className="relative top-1 text-red-800 "/>
+            <h6>Conheça tudo sobre LEVI</h6>
+            <SetaDireita className="relative top-1 text-red-800 "/>
           </Link>
         </div>
       </div>

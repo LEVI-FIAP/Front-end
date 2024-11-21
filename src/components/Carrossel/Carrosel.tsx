@@ -11,7 +11,7 @@ export default function Carrossel ({listaSlides} : {listaSlides:TipoCarrosel[]})
     
   return (
     <div className='bg-gray-500 h-80'>
-      <Swiper modules = {[Autoplay]} spaceBetween={150} slidesPerView={2} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
+      <Swiper modules = {[Autoplay]} spaceBetween={225} slidesPerView={2} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
         delay: 2500, 
         disableOnInteraction: false, 
       }}>

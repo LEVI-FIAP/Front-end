@@ -86,7 +86,7 @@ export default function Login() {
                   </div>
                   <h4>Não possui cadastro?</h4>
                   <Link href="/usuario/cadastro" className="flex gap-5">
-                    <h6>Aperte aqui para criar uma conta</h6>
+                    <h5>Aperte aqui para criar uma conta</h5>
                     <SetaDireita />
                   </Link>
                   <h3 className={className}>{mensagemStatus}</h3>
