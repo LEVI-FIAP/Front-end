@@ -70,45 +70,6 @@
 
     & .formularios{
         @apply flex text-2xl font-bold justify-between gap-10 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl; 
-
-        & .formulario{
-            @apply flex flex-col gap-20 pb-5;
-
-            & .voltar{
-                @apply flex gap-4;
-
-                & .seta{
-                    @apply relative top-1;
-                }
-            }
-
-            & .formCad{
-                @apply flex flex-col gap-10;
-
-                & h1{
-                    @apply text-4xl phone:max-sm:text-2xl;
-                }
-
-                & .campo{
-
-                    & .mostrar{
-                        @apply flex;
-                    }
-
-                    & input{
-                        @apply bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60;
-                    }
-
-                    & select{
-                        @apply bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60;
-                    }
-                }
-
-                & .btn{
-                    @apply flex justify-center bg-gray-600 text-white py-2;
-                }
-            }
-        }
     }
 
     & .relatorios{

@@ -61,25 +61,25 @@ export default function Login() {
             <Image src={paisagem} alt="Paisagem" className="h-101"/>
         </aside>
 
-        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
+        <aside className="formulario pr-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0 flex flex-col gap-20 pb-5">
             
-            <Link className="voltar" href="/">
-                <SetaEsquerda className="seta"/>
+            <Link className="voltar flex gap-4" href="/">
+                <SetaEsquerda className="seta relative top-1"/>
                 <h3>Home</h3>
             </Link>
 
-            <form onSubmit={handleSubmit} className="formCad">
-                <h1>Login</h1>
+            <form onSubmit={handleSubmit} className="formCad flex flex-col gap-10">
+                <h1 className="text-4xl phone:max-sm:text-2xl">Login</h1>
                   <div className="campo flex flex-col gap-10">
                       <label htmlFor="idEmail">Seu email</label>
-                      <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
+                      <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
                   </div>
                   <div className="campo flex flex-col gap-10">
                       <label htmlFor="idSenha">Sua senha</label>
-                      <input type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
+                      <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                       <div className="mostrar">
                         <h5>Mostrar Senha</h5>
-                        <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
+                        <button type="button flex justify-center bg-gray-600 text-white py-2" onClick={() => setSenhaVisivel(!senhaVisivel)}>
                             <input type="checkbox"/>
                         </button>
                       </div>
