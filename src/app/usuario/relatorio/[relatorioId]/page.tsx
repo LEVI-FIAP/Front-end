@@ -63,10 +63,16 @@ if (erro) {
     return (
       <main className="flex flex-col gap-10">
         <div className="intro bg-[url('../assets/fundo-relatorio.png')] bg-cover bg-center text-white px-20 py-32 flex flex-col gap-10 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2">
-          <aside className="txt">
-            <h1>Relatório {params.relatorioId}</h1>
-            <p>Veja os detalhes e contas que utilizamos para o descobrimento do seu investimento no sistema solar</p>
-          </aside>
+          <div className="txt">
+            <h1 className="text-3xl phone:max-md:text-xl">Relatório {params.relatorioId}</h1>
+            <p className="w-110 phone:max-md:w-auto">Veja os detalhes e contas que utilizamos para o descobrimento do seu investimento no sistema solar</p>
+          </div>
+          <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10">
+            <h6>Veja todos os seus relatorios</h6>
+            <Link href={`/usuario/${relatorio.idUsuario}`} className="relative top-1 text-red-600">
+                <SetaDireita/>
+            </Link>
+          </div>
         </div>
         <div className="meio flex flex-col gap-10">
           <div className="qtdPainel flex h-min bg-gradient-to-b from-orange-700 to-orange-400 justify-between phone:max-lg:py-10">
