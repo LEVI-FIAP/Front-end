@@ -25,7 +25,7 @@ export default function Cadastro() {
     e.preventDefault();
     try {
         
-        const response = await fetch("http://localhost:8080/gslevi_war/users",{
+        const response = await fetch("https://gslevi-86130ccf0dc3.herokuapp.com/users",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -86,7 +86,7 @@ export default function Cadastro() {
                   <h5>Mostrar Senha</h5>
               </div>
               <h4>Já tem uma conta?</h4>
-              <link href="/usuario/login">Aperte aqui para logar</link>
+              <Link href="/usuario/login">Aperte aqui para logar</Link>
               <h3 className={className}>{mensagemStatus}</h3>
               <div>
                   <button type="submit">Cadastrar</button>

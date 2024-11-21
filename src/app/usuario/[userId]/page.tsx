@@ -4,11 +4,14 @@ import { FaPencilAlt as Lapis} from "react-icons/fa";
 import { TipoRelatorio} from "@/types";
 import { useEffect, useState } from "react";
 import Relatorios from "@/components/Relatorios/Relatorios";
+import { useRouter } from "next/navigation";
 
 export default function Usuario({params}: {params: { userId: number }}) {
   
+  const navigate = useRouter();
 
-  const [relatorios, setRelatorios] = useState<TipoRelatorio[]>({
+
+  const [relatorios, setRelatorios] = useState<TipoRelatorio[]>([{
     id: 0,
     consumoMensal: 0,
     contaLuz: 0,
@@ -21,7 +24,7 @@ export default function Usuario({params}: {params: { userId: number }}) {
     energiaMes: 0,
     idRegiao: 0,
     idUsuario: params.userId,
-  });
+  }]);
 
   const [deletarModal, setDeletarModal] = useState(false);
 
@@ -35,7 +38,7 @@ export default function Usuario({params}: {params: { userId: number }}) {
   useEffect(() => {
         
     const chamadaApi = async () =>{
-        const response = await fetch(`http://localhost:8080/gslevi_war/reports?user=${params.userId}`);
+        const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/reports?user=${params.userId}`);
         const dados = await response.json();
         setRelatorios(dados);
     }
@@ -47,7 +50,7 @@ export default function Usuario({params}: {params: { userId: number }}) {
 const handleDelete = async ()=>{
   try {
       
-      const response = await fetch(`http://localhost:8080/gslevi_war/users/${params.userId}`,{
+      const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/${params.userId}`,{
           method:"DELETE",
           headers:{
               "Content-Type":"application/json"
@@ -55,7 +58,9 @@ const handleDelete = async ()=>{
       });
 
       if(response.ok){
-          console.log("Usuario deletado feita com sucesso")
+        console.log("Usuario deletado com sucesso")
+        navigate.push("/");
+
       }
 
   } catch (error) {
@@ -84,7 +89,7 @@ const handleDelete = async ()=>{
             <div className="botaoUsu">
               <BtnPgs Icon={Lapis} texto="Editar Meus dados" link={`/usuario/editar/${params.userId}`}/>
             </div>
-            <button className="flex justify-start" onClick={() => mudarModal()}>Deletar Usuario</button>
+            <button onClick={() => mudarModal()}>Deletar Usuario</button>
         </div>      
         <dialog open={deletarModal}>
           <button onClick={() => mudarModal()}>X</button>

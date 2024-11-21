@@ -29,7 +29,7 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
     e.preventDefault();
     try {
         
-        const response = await fetch("http://localhost:8080/gslevi_war/reports",{
+        const response = await fetch("https://gslevi-86130ccf0dc3.herokuapp.com/reports",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

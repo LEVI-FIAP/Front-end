@@ -28,7 +28,7 @@ export default function Login() {
     e.preventDefault();
     try {
         
-        const response = await fetch(`http://localhost:8080/gslevi_war/users/login`,{
+        const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/login`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

@@ -1,3 +1,4 @@
+"use client"
 import PainelImg from "@/images/relatorio/painel.png"
 import MoedasImg from "@/images/relatorio/moedas.png"
 import CofrinhoImg from "@/images/relatorio/cofrinho.png"
@@ -28,7 +29,7 @@ import Image from "next/image";
     useEffect(() => {
         
       const chamadaApi = async () =>{
-          const response = await fetch(`http://localhost:8080/gslevi_war/reports/${params.relatorioId}`);
+          const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/reports/${params.relatorioId}`);
           const dados = await response.json();
           setRelatorio(dados);
       }
@@ -115,15 +116,13 @@ import Image from "next/image";
                 <h3>Economia Mensal</h3>
               </div>
               <h4>{relatorio.custoInstalacao} / {relatorio.economiaMensal}</h4>
-              <h2>Você terá um retorno em {relatorio.payback} mêses</h2>
+              <h2>Você terá um retorno em {relatorio.payback} meses</h2>
             </aside>
           </div>
 
         </div>
         <div className="fim">
           <aside className="txt">
-            <h2>Comparação da suas contas</h2>
-            <h5> Antes: {relatorio.contaLuz} / Agora: X</h5>
             <p>Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
             <div className="link">
               <Link href={`/usuario/${relatorio.idUsuario}`}>
@@ -138,7 +137,6 @@ import Image from "next/image";
             <div className="grafico3"></div>
           </aside>
         </div>
-
       </main>
     );
   }

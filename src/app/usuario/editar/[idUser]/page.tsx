@@ -24,7 +24,7 @@ export default function Editar({params}: {params: { idUser: number }}) {
 
     useEffect(() => {
         const chamarApi = async () =>{
-            const response = await fetch(`http://localhost:8080/gslevi_war/users/${params.idUser}`);
+            const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/${params.idUser}`);
             const dados = await response.json();
             setUsuario(dados)
         }
@@ -35,7 +35,7 @@ export default function Editar({params}: {params: { idUser: number }}) {
     e.preventDefault();
     try {
         
-        const response = await fetch(`http://localhost:8080/gslevi_war/users/${params.idUser}`,{
+        const response = await fetch(`https://gslevi-86130ccf0dc3.herokuapp.com/users/${params.idUser}`,{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
@@ -48,16 +48,16 @@ export default function Editar({params}: {params: { idUser: number }}) {
         });
 
         if(response.ok){
-            console.log("Atualização feita com sucesso")
-            setUsuario({
-                id:0,
-                email:"",
-                senha:"",
-                username:""
-            });
-            setMensagem("Dados editados com sucesso")
-            setClassName("text-green-500")
-            navigate.push(`/usuario/${params.idUser}`);
+          setMensagem("Dados editados com sucesso")
+          setClassName("text-green-500")
+          console.log("Atualização feita com sucesso")
+          setUsuario({
+            id:0,
+            email:"",
+            senha:"",
+            username:""
+          });
+          navigate.push(`/usuario/${params.idUser}`);
         }
 
     } catch (erro) {
@@ -81,7 +81,7 @@ export default function Editar({params}: {params: { idUser: number }}) {
           </Link>
 
           <form onSubmit={handleSubmit} className="formCad">
-                <h1>Cadastro</h1>
+                <h1>Editar dados</h1>
               <div className="campo">
                   <label htmlFor="idEmail">Email</label>
                   <input type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite o seu email." required/>
@@ -102,7 +102,7 @@ export default function Editar({params}: {params: { idUser: number }}) {
               </div>
               <h3 className={className}>{mensagemStatus}</h3>
               <div className="btn">
-                  <button type="submit">Cadastrar</button>
+                  <button type="submit">Alterar Dados</button>
               </div>
           </form>
         </aside>

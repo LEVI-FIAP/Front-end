@@ -94,7 +94,7 @@ useEffect(() => {
       <aside className="formulario w-min pr-60 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0">
           <Link href="/">
             <SetaEsquerda />
-            <h3>Dados</h3>
+            <h3>Editar Dados</h3>
             <p>A maioria dos dados que pedimos esta presente na sua conta de luz!</p>
           </Link>
           <form onSubmit={handleSubmit} className="formCad">

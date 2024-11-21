@@ -12,16 +12,17 @@ export default function Relatorios ({idRelatorio} : {idRelatorio:number}) {
     
   return (
     <div>
-      <Swiper modules = {[Autoplay]} spaceBetween={300} slidesPerView={3} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
+      <Swiper modules = {[Autoplay]} spaceBetween={300} slidesPerView={2} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
         delay: 2500, 
         disableOnInteraction: false, 
       }}>
         <SwiperSlide className='slide'>
             <Image src={ImgRelatorio} alt='img-slide'/>
             <h3>Relatorio {idRelatorio}</h3>
-            <Link href={`/usuario/${idRelatorio}`}>
+            <Link href={`/usuario/relatorio/${idRelatorio}`}>
                 <h6>Veja o Relatório</h6>
-                <Barras />
+                <Barras /> 
+                {/* my honest reaction */}
             </Link>
         </SwiperSlide>
       </Swiper>
