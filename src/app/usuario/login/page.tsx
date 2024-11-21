@@ -91,7 +91,7 @@ export default function Login() {
                   </Link>
                   <h3 className={className}>{mensagemStatus}</h3>
                   <div>
-                      <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40" type="submit">entrar</button>
+                      <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">entrar</button>
                   </div>
               </form>
         </aside>
