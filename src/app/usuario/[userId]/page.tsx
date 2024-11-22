@@ -150,10 +150,8 @@ if (erroUsuario){
             </div>
           ) : (
 
-            <div>
-            {relatorios.map((relatorio) => (
-              <Relatorios key={relatorio.id} idRelatorio={relatorio.id}/>
-            ))}
+            <div className="carroselRelatorios">
+              <Relatorios relatorios={relatorios}/>
             </div>
           )}
         </div>
