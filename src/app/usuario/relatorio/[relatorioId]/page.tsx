@@ -3,6 +3,7 @@ import PainelImg from "@/images/relatorio/painel.png"
 import MoedasImg from "@/images/relatorio/moedas.png"
 import CofrinhoImg from "@/images/relatorio/cofrinho.png"
 import DinheiroImg from "@/images/relatorio/dinheiro.png"
+import superChoque from "@/images/super-choque.jpg"
 import { FaPencilAlt as Lapis} from "react-icons/fa";
 import { TipoRelatorio } from "@/types";
 import Link from "next/link";
@@ -53,10 +54,17 @@ import BtnPgs from "@/components/BtnPgs/BtnPgs"
 
 if (erro) {
   return (
-    <main className="usuarioInvalido">
-      <h1>Erro ao validar Relatorio</h1>
-      <p>{erro}</p>
-      <Link href="/">Voltar para Home</Link>
+    <main className="usuarioInvalido flex flex-col gap-5 py-5 bg-erro1">
+      <div className="flex justify-center">
+        <Image src={superChoque} alt="super Choque" className="w-min h-min"/>
+      </div>
+      <div className="flex flex-col self-center text-2xl font-bold text-center text-amber-300">
+        <h1>Erro ao validar Relatorio</h1>
+        <p>{erro}</p>
+        <Link href="/">Voltar para Home</Link>
+
+      </div>
+    
     </main>
   )
 }
