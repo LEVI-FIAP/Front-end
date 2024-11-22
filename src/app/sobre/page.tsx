@@ -43,7 +43,7 @@ export default function Sobre() {
               </div>
             </figcaption>
           </figure>
-          <figure className="bg-[url('../assets/erick-img.png')] bg-cover bg-center bg-no-repeat phone:max-md:bg-left">
+          <figure className="bg-[url('../assets/vicenzo-img.png')] bg-cover bg-center bg-no-repeat phone:max-md:bg-left">
             <figcaption className="pessoa justify-self-end phone:max-md:justify-self-start">
               <h3>Vicenzo Massao de Oliveira</h3>
               <h4>RM 554833</h4>
