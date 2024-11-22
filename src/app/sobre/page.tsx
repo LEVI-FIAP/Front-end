@@ -32,17 +32,6 @@ export default function Sobre() {
               </div>
             </figcaption>
           </figure>
-          <figure className="bg-[url('../assets/luiz-img.png')] bg-cover bg-center phone:max-md:bg-right">
-            <figcaption className="pessoa justify-self-start phone:max-md:justify-self-end">
-              <h3>Luiz Henrique Neri Reimberg</h3>
-              <h4>RM 556864</h4>
-              <div className="links">
-                <a href="https://github.com/LuizHNR"><GithubLogo/></a>
-                <a href="https://www.linkedin.com/in/luiz-henrique-neri-reimberg-6ab0032b8/"><LinkedinLogo/></a>
-                <a href="https://www.instagram.com/loren_lhnr/"><InstaLogo/></a>
-              </div>
-            </figcaption>
-          </figure>
           <figure className="bg-[url('../assets/vicenzo-img.png')] bg-cover bg-center bg-no-repeat phone:max-md:bg-left">
             <figcaption className="pessoa justify-self-end phone:max-md:justify-self-start">
               <h3>Vicenzo Massao de Oliveira</h3>
@@ -51,6 +40,17 @@ export default function Sobre() {
                 <a href="https://github.com/fFukurou"><GithubLogo/></a>
                 <a href="https://www.linkedin.com/in/vicenzo-massao-de-oliveira-2a8b35109/"><LinkedinLogo/></a>
                 <a href="https://www.instagram.com/ffukurou_/"><InstaLogo/></a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure className="bg-[url('../assets/luiz-img.png')] bg-cover bg-center phone:max-md:bg-right">
+            <figcaption className="pessoa justify-self-start phone:max-md:justify-self-end">
+              <h3>Luiz Henrique Neri Reimberg</h3>
+              <h4>RM 556864</h4>
+              <div className="links">
+                <a href="https://github.com/LuizHNR"><GithubLogo/></a>
+                <a href="https://www.linkedin.com/in/luiz-henrique-neri-reimberg-6ab0032b8/"><LinkedinLogo/></a>
+                <a href="https://www.instagram.com/loren_lhnr/"><InstaLogo/></a>
               </div>
             </figcaption>
           </figure>
