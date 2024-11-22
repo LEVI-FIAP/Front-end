@@ -3,6 +3,7 @@ import { TipoRelatorio} from "@/types";
 import Link from "next/link"
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 import fundo from "@/images/form-edit.png";
 import Image from "next/image";
@@ -124,6 +125,10 @@ useEffect(() => {
               <label htmlFor="idValor">Valor médio da conta de luz</label>
               <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
             </div>
+            <Link href={`/usuario/${relatorio.idUsuario}`}>
+                <SetaDireita />
+                <h4>Voltar para página de Usuário</h4>
+            </Link>
             <h3 className={className}>{mensagemStatus}</h3>
             <div>
               <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">Atualizar Dados</button>

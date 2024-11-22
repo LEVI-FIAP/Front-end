@@ -72,7 +72,7 @@ if (erro) {
       <main className="flex flex-col gap-10">
         <div className="intro bg-[url('../assets/fundo-relatorio.png')] bg-cover bg-center text-white px-20 py-32 flex flex-col gap-10 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2">
           <div className="txt">
-            <h1 className="text-3xl phone:max-md:text-xl">Relatório {params.relatorioId}</h1>
+            <h1 className="text-3xl phone:max-md:text-xl">Relatório de Nº{params.relatorioId}</h1>
             <p className="w-110 phone:max-md:w-auto">Veja os detalhes e contas que utilizamos para o descobrimento do seu investimento no sistema solar</p>
           </div>
           <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10 phone:max-lg:w-auto flex-wrap">
@@ -154,10 +154,11 @@ if (erro) {
         </div>
 
         <div className="bg-[url('../assets/fundo-relatorio-2.png')] bg-cover bg-center text-white px-20 py-10 flex flex-col gap-14 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2 phone:max-lg:pt-20">
-          <p className="w-110 sm:max-md:w-80 phone:max-sm:w-auto">Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
+          <p className="w-110 phone:max-md:w-80 phone:max-sm:w-auto">Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
           <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10 phone:max-lg:w-auto flex-wrap">
             <h6>Voltar para a página de usuario</h6>
             <Link href={`/usuario/${relatorio.idUsuario}`} className="relative top-1 text-red-600">
+              <h6>Voltar para a página de usuario</h6>
               <SetaDireita/>
               </Link>
             </div>

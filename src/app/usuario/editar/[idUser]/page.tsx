@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
+import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import fundo from "@/images/form-edit.png";
 import Image from "next/image";
 
@@ -100,6 +101,10 @@ export default function Editar({params}: {params: { idUser: number }}) {
                     </button>
                   </div>
               </div>
+              <Link href={`/usuario/${params.idUser}`}>
+                <SetaDireita />
+                <h4>Voltar para página de Usuário</h4>
+              </Link>
               <h3 className={className}>{mensagemStatus}</h3>
               <div>
                   <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">Alterar Dados</button>
