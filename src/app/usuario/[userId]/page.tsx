@@ -140,10 +140,13 @@ if (erroUsuario){
               <BtnPgs Icon={Lapis} texto="Editar Meus dados" link={`/usuario/editar/${params.userId}`}/>
             </div>
         </div>      
-        <dialog open={deletarModal}>
-          <button onClick={() => mudarModal()}>X</button>
-          <p>Você tem certeza que quer deletar sua conta? Perdera seus relatorios e sua conta para sempre</p>
-          <button onClick={handleDelete}>Sim, quero deletar</button>
+        <dialog open={deletarModal} className="text-white bg-black p-5">
+          <div className="flex flex-col gap-2">
+            <button className="flex justify-end" onClick={() => mudarModal()}>X</button>
+            <p className="w-80 phone:max-sm:w-auto">Você tem certeza que quer deletar sua conta? Perdera seus relatorios e sua conta para sempre</p>
+            <button onClick={handleDelete} className="hover:text-red-600">Sim, quero deletar</button>
+
+          </div>
         </dialog>
 
         <div className="relatorios">
@@ -152,7 +155,7 @@ if (erroUsuario){
             <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar/${params.userId}`}/>
           </div>
         </div>
-            <button className="flex" onClick={() => mudarModal()}>Deletar Usuário</button>
+            <button className="flex ml-10 p-2 hover:text-red-600 hover:border-red-600 border-2 border-gray-400 text-gray-400 rounded-xl w-max" onClick={() => mudarModal()}>Deletar Usuário</button>
 
         <div>
           {erroRelatorio ? (
