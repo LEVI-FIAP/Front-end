@@ -60,7 +60,7 @@ export default function Cadastro() {
 }
 
   return (
-    <main className="formularios flex text-2xl font-bold justify-between gap-10 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
+    <main className="formularios flex text-2xl font-bold justify-between gap-0 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
       <aside className="formulario  pl-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0 flex flex-col gap-20 pb-5">
 
           <Link className="voltar flex gap-4" href="/">
