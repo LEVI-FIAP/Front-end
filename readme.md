@@ -16,14 +16,14 @@ Neste repositório está presente o desenvolvimento da entrega da segunda Global
 
 ---
 #### Video
-Link do video - <a href="https://youtu.be/PkXg9ScyzIg">Clique aqui para ver</a>
+Link do Video - <a href="https://youtu.be/PkXg9ScyzIg">Clique aqui para ver o vídeo do projeto.</a>
 
 ---
 
 #### Vercel
-Link do vercel - <a href="https://levi-gs.vercel.app/">Clique aqui para ver o site pela vercel</a>
+Link do vercel - <a href="https://levi-gs.vercel.app/">Clique aqui para ver o site pela Vercel.</a>
 
 ---
 
 #### Java
-Link do java repositório - <a href="https://github.com/LEVI-FIAP/Java">Clique aqui para ver o site pela vercel</a>
+Link do repositório Java - <a href="https://github.com/LEVI-FIAP/Java">Clique aqui para ir para o repositório Java</a>
