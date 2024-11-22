@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Cadastro() {
 
   const [senhaVisivel, setSenhaVisivel] = useState(false)
-  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [mensagemStatus, setMensagem] = useState<string>("*Preencha todos os campos")
   const [className, setClassName] = useState<string>("text-gray-500")
   
   const [usuario, setUsuario] = useState<TipoUsuario>({
@@ -85,7 +85,7 @@ export default function Cadastro() {
                   <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                   <label className="text-lg text-red-500" htmlFor="idSenha">*Obrigatório</label>
                   <div className="mostrar flex gap-3">
-                      <h5>Mostrar Senha</h5>
+                      <h5>Mostrar senha</h5>
                       <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
                           <input type="checkbox"/>
                       </button>
@@ -93,7 +93,7 @@ export default function Cadastro() {
               </div>
               <h4>Já tem uma conta?</h4>
               <Link href="/usuario/login">
-                <h5>Aperte aqui para logar</h5>
+                <h5>Click para realizar o login</h5>
                 <SetaDireita/>
               </Link>
               <h3 className={className}>{mensagemStatus}</h3>

@@ -13,7 +13,7 @@ export default function Login() {
   const navigate = useRouter();
 
   const [senhaVisivel, setSenhaVisivel] = useState(false)
-  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [mensagemStatus, setMensagem] = useState<string>("*Preencha todos os campos")
   const [className, setClassName] = useState<string>("text-gray-500")
 
   const [usuario, setUsuario] = useState<TipoUsuario>({
@@ -72,14 +72,14 @@ export default function Login() {
             <form onSubmit={handleSubmit} className="formCad flex flex-col gap-10">
                 <h1 className="text-4xl phone:max-sm:text-2xl">Login</h1>
                   <div className="campo flex flex-col gap-10">
-                      <label htmlFor="idEmail">Seu email</label>
+                      <label htmlFor="idEmail">Email</label>
                       <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="email" name="email" id="idEmail" value={usuario.email} onChange={(e)=> setUsuario({...usuario, email:e.target.value}) } placeholder="Digite seu email" required/>
                   </div>
                   <div className="campo flex flex-col gap-10">
-                      <label htmlFor="idSenha">Sua senha</label>
+                      <label htmlFor="idSenha">Senha</label>
                       <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                       <div className="mostrar flex gap-3">
-                        <h5>Mostrar Senha</h5>
+                        <h5>Mostrar senha</h5>
                         <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
                             <input type="checkbox"/>
                         </button>

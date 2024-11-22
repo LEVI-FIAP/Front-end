@@ -28,10 +28,10 @@ export default function Informacao() {
       <div className="time bg-[url('../assets/imagem-time.png')] bg-cover bg-center text-white px-20 py-10 font-bold text-2xl flex flex-col gap-16">
         <h2 className="text-4xl">Nosso time</h2>
         <h4 className="text-3xl">Você quer conhecê los?</h4>
-        <p className="w-96 font-normal phone:max-sm:w-auto">Se sua resposta for sim então fique a vontade para procurar e conhecer onde foi criado e armazenado o projeto LEVI, é só apertar o link abaixo!</p>
+        <p className="w-96 font-normal phone:max-sm:w-auto">Sinta-se convidado para conhecer e explorar onde foi criado e armazenado o projeto LEVI, no repositório abaixo.</p>
         <div className="link">
           <Link href="/sobre" className="flex py-10 border-t-2 border-white w-96 gap-10 phone:max-sm:w-auto">
-            <h6 className="font-normal">click aqui para conhecê los</h6>
+            <h6 className="font-normal">Click aqui para conhecê-los</h6>
             <SetaDireita />
           </Link>
         </div>

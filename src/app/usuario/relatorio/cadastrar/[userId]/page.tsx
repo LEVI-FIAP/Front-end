@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Cadastrar({params}: {params: { userId: number }}) {
 
-  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [mensagemStatus, setMensagem] = useState<string>("*Preencha todos os campos")
   const [className, setClassName] = useState<string>("text-gray-500")
   const [relatorio, setRelatorio] = useState<TipoRelatorio>({
     id: 0,
@@ -84,16 +84,16 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
             <h3>Home</h3>
           </Link>
           <form onSubmit={handleSubmit} className="formCad flex flex-col gap-10">
-              <p className="font-normal w-96 phone:max-sm:w-auto">A maioria dos dados que pedimos esta presente na sua conta de luz!</p>
+              <p className="font-normal w-96 phone:max-sm:w-auto">A maioria dos dados que pedimos está presente na sua conta de luz!</p>
               <h1 className="text-4xl phone:max-sm:text-2xl">Dados</h1>
               <div className="campo flex flex-col gap-10">
-                  <label htmlFor="idTamanho">Tamanho disponivel da sua propriedade</label>
-                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="number" name="tamanho" id="idTamanho" value={relatorio.areaDesejada} onChange={(e)=> setRelatorio({...relatorio, areaDesejada:Number(e.target.value),}) } placeholder="Digite o tamanho em metros quadrados." required/>
+                  <label htmlFor="idTamanho">Tamanho disponível da sua propriedade:</label>
+                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" min='0' type="number" name="tamanho" id="idTamanho" value={relatorio.areaDesejada} onChange={(e)=> setRelatorio({...relatorio, areaDesejada:Number(e.target.value),}) } placeholder="Digite o tamanho em metros quadrados." required/>
               </div>
               <div className="campo flex flex-col gap-10"> 
-                  <label htmlFor="idRegiao">Região que esta localizado</label>
+                  <label htmlFor="idRegiao">Região que está localizado:</label>
                   <select className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" name="regiao" id="idRegiao" value={relatorio.idRegiao} onChange={(e) => setRelatorio({...relatorio, idRegiao:Number(e.target.value),})} required>
-                    <option selected disabled value="">Escolha uma região</option>
+                    <option selected value="">Escolha uma região</option>
                     <option value="1">Norte</option>
                     <option value="2">Nordeste</option>
                     <option value="3">Centro Oeste</option>
@@ -102,12 +102,12 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
                   </select>
               </div>
               <div className="campo flex flex-col gap-10">
-                  <label htmlFor="idConsumo">Consumo de Energia em kWh</label>
-                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="number" name="consumo" id="idConsumo" value={relatorio.consumoMensal} onChange={(e)=> setRelatorio({...relatorio, consumoMensal: Number(e.target.value)})} placeholder="Digite o quanto você consome de energia por mês" required/>
+                  <label htmlFor="idConsumo">Consumo de Energia (kWh):</label>
+                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" min='0' type="number" name="consumo" id="idConsumo" value={relatorio.consumoMensal} onChange={(e)=> setRelatorio({...relatorio, consumoMensal: Number(e.target.value)})} placeholder="Digite o quanto você consome de energia por mês" required/>
               </div>
               <div className="campo flex flex-col gap-10">
-                  <label htmlFor="idValor">Valor médio da conta de luz</label>
-                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
+                  <label htmlFor="idValor">Valor médio da conta de luz (R$):</label>
+                  <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" min='0' type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
               </div>
               <Link href={`/usuario/${params.userId}`}>
                 <SetaDireita />
