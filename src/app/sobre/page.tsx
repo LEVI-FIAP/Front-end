@@ -33,10 +33,10 @@ export default function Sobre() {
             </figcaption>
           </figure>
           <figure className="bg-[url('../assets/vicenzo-img.png')] bg-cover bg-center bg-no-repeat phone:max-md:bg-center">
-            <figcaption className="pessoa justify-self-end phone:max-md:justify-self-start">
+            <figcaption className="pessoa justify-self-end phone:max-md:justify-self-start phone:max-md:text-left">
               <h3>Vicenzo Massao de Oliveira</h3>
               <h4>RM 554833</h4>
-              <div className="links">
+              <div className="links phone:max-md:text-left phone:max-md:justify-start">
                 <a href="https://github.com/fFukurou"><GithubLogo/></a>
                 <a href="https://www.linkedin.com/in/vicenzo-massao-de-oliveira-2a8b35109/"><LinkedinLogo/></a>
                 <a href="https://www.instagram.com/ffukurou_/"><InstaLogo/></a>
