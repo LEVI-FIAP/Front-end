@@ -58,9 +58,9 @@ export default function Home() {
       <div className="intro bg-[url('../assets/home-fundo.png')] bg-cover bg-center text-white px-20 py-32 flex flex-col gap-10 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2">
         <h1 className="text-3xl phone:max-md:text-xl">Bem-Vindo ao Projeto L.E.V.I</h1>
         <p className="w-96 phone:max-md:w-auto">Embarque nessa experiencia para descobrir como ajudar e melhorar a saúde de nosso planeta!</p>
-        <Link href="/usuario/login" className="bg-red-950 w-max px-5 py-2 rounded-lg phone:max-md:w-auto">Click para c omeçar</Link>
+        <Link href="/usuario/login" className="bg-red-950 w-max px-5 py-2 rounded-lg phone:max-md:w-auto">Click para começar</Link>
         <div className="link flex gap-5 border-t-2 border-white w-96 pt-10 mt-16 phone:max-md:w-auto">
-          <Link href="/informacao">
+          <Link href="/informacao" className="flex gap-5">
             <h6>Conheça tudo sobre LEVI</h6>
             <SetaDireita className="relative top-1 text-red-800 "/>
           </Link>

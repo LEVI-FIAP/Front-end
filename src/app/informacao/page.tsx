@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Informacao() {
 
   return (
-    <main className="informacao flex flex-col gap-80">
+    <main className="informacao flex flex-col gap-80 pb-10">
       <div className="bg-[url('../assets/fundo.png')] bg-cover bg-center">
         <Image src={LeviInvert} alt="logo-invertida" className="w-101"/>
       </div>
@@ -32,7 +32,7 @@ export default function Informacao() {
         <div className="link">
           <Link href="/sobre" className="flex py-10 border-t-2 border-white w-96 gap-10 phone:max-sm:w-auto">
             <h6 className="font-normal">Click aqui para conhecê-los</h6>
-            <SetaDireita />
+            <SetaDireita className="relative top-1 text-red-700"/>
           </Link>
         </div>
       </div>
