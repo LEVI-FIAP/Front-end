@@ -87,12 +87,12 @@ export default function Login() {
                   </div>
                   <h4>Não possui cadastro?</h4>
                   <Link href="/usuario/cadastro" className="flex gap-5">
-                    <h5>Aperte aqui para criar uma conta</h5>
+                    <h5>Click para criar uma conta</h5>
                     <SetaDireita />
                   </Link>
                   <h3 className={className}>{mensagemStatus}</h3>
                   <div>
-                      <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">entrar</button>
+                      <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">Entrar</button>
                   </div>
               </form>
         </aside>

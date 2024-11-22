@@ -8,7 +8,7 @@ export default function Sobre() {
       <div className="intro bg-[url('../assets/fundo-sobre.jpg')] bg-cover bg-center h-110">
         <aside className="texto flex flex-col justify-self-end w-110 text-white pr-20 pt-36 text-center gap-5 font-bold phone:max-md:w-auto phone:max-md:pr-0">
           <h2 className="text-4xl">Quem Somos!</h2>
-          <p className="text-xl">Somos estudantes do primeiro ano de Análise e Desenvolvimento de Sistemas dentro da FIAP, somos os responsaveis por criar esse website. Aqui oferecemos ferramentas para te conscientizar e ajudar o meio ambiente com base nas suas próprias ações, porque juntos podemos mudar o mundo.</p>
+          <p className="text-xl">Somos estudantes do primeiro ano de Análise e Desenvolvimento de Sistemas da FIAP, e responsaveis por criar esse website. Aqui oferecemos ferramentas para lhe conscientizar e ajudar o meio ambiente com base nas suas próprias ações, pois juntos podemos mudar o mundo.</p>
         </aside>
       </div>
       <div className="criadores flex flex-col gap-10 font-bold">
