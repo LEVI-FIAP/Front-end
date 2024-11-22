@@ -36,7 +36,7 @@ export default function Sobre() {
             <figcaption className="pessoa justify-self-end phone:max-md:justify-self-start phone:max-md:text-left">
               <h3>Vicenzo Massao de Oliveira</h3>
               <h4>RM 554833</h4>
-              <div className="links phone:max-md:text-left phone:max-md:justify-start">
+              <div className="flex gap-10 justify-center phone:max-md:text-left phone:max-md:justify-start ">
                 <a href="https://github.com/fFukurou"><GithubLogo/></a>
                 <a href="https://www.linkedin.com/in/vicenzo-massao-de-oliveira-2a8b35109/"><LinkedinLogo/></a>
                 <a href="https://www.instagram.com/ffukurou_/"><InstaLogo/></a>
