@@ -73,7 +73,7 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
 }
 
   return (
-    <main className="formularios flex text-2xl font-bold justify-between gap-10 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
+    <main className="formularios flex text-2xl font-bold justify-between gap-0 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
       <aside className="phone:max-xl:hidden">
         <Image src={fundo} alt="form-edicao" className="h-101"/>
       </aside>
