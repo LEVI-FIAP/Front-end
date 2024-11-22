@@ -155,7 +155,7 @@ if (erroUsuario){
             <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar/${params.userId}`}/>
           </div>
         </div>
-            <button className="flex ml-10 p-2 hover:text-red-600 hover:border-red-600 border-2 border-gray-400 text-gray-400 rounded-xl w-max" onClick={() => mudarModal()}>Deletar Usuário</button>
+            <button className="flex ml-10 p-2 text-xl hover:text-red-600 hover:border-red-600 border-2 border-gray-400 text-gray-400 rounded-xl w-max" onClick={() => mudarModal()}>Deletar Usuário</button>
 
         <div>
           {erroRelatorio ? (
