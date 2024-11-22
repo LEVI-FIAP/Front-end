@@ -5,6 +5,8 @@ import { TipoRelatorio, TipoUsuario} from "@/types";
 import { useEffect, useState } from "react";
 import Relatorios from "@/components/Relatorios/Relatorios";
 import Link from "next/link"
+import pesquisar from "@/images/pesquisar.jpg"
+import Image from "next/image";
 
 export default function Usuario({params}: {params: { userId: number }}) {
   
@@ -102,10 +104,16 @@ if (usuarioDeletado){
 
 if (erroUsuario){
   return (
-    <main className="usuarioInvalido">
-      <h1>Erro ao validar Usuario</h1>
-      <p>{erroUsuario}</p>
-      <Link href="/">Voltar para Home</Link>
+    <main className="usuarioInvalido flex flex-col gap-5 py-5">
+      <div className="flex justify-center">
+        <Image src={pesquisar} alt="pesquisar" className="w-80"/>
+      </div>
+      <div className="flex flex-col self-center text-2xl font-bold text-center">
+        <h1>Erro ao validar Usuario</h1>
+        <p>{erroUsuario}</p>
+        <Link href="/">Voltar para Home</Link>
+
+      </div>
     </main>
   )
 }

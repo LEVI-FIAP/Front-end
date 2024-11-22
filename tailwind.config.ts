@@ -17,6 +17,7 @@ const config: Config = {
         dinheiro2: "#0F2024FF",
         economia: "#D9C8D1",
         payback: "#B8BDC8",
+        erro1: "#6C5B61"
       },
       screens: {
         'phone': '200px',
