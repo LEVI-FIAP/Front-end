@@ -3,6 +3,7 @@ import { TipoRelatorio} from "@/types";
 import Link from "next/link"
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { FaCircleArrowRight as SetaDireita} from "react-icons/fa6";
 import { IoIosArrowBack as SetaEsquerda } from "react-icons/io";
 import fundo from "@/images/form-edit.png";
 import Image from "next/image";
@@ -87,7 +88,7 @@ useEffect(() => {
 }
 
   return (
-    <main className="formularios flex text-2xl font-bold justify-between gap-10 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
+    <main className="formularios flex text-2xl font-bold justify-between gap-0 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
       <aside className="phone:max-xl:hidden">
         <Image src={fundo} alt="form-edicao" className="h-101"/>
       </aside>
@@ -124,6 +125,10 @@ useEffect(() => {
               <label htmlFor="idValor">Valor médio da conta de luz</label>
               <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
             </div>
+            <Link href={`/usuario/${relatorio.idUsuario}`}>
+                <SetaDireita />
+                <h4>Voltar para página de Usuário</h4>
+            </Link>
             <h3 className={className}>{mensagemStatus}</h3>
             <div>
               <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">Atualizar Dados</button>

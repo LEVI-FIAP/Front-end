@@ -10,7 +10,7 @@ import Image from "next/image";
 export default function Cadastro() {
 
   const [senhaVisivel, setSenhaVisivel] = useState(false)
-  const [mensagemStatus, setMensagem] = useState<string>("Preencha todos os campos")
+  const [mensagemStatus, setMensagem] = useState<string>("*Preencha todos os campos")
   const [className, setClassName] = useState<string>("text-gray-500")
   
   const [usuario, setUsuario] = useState<TipoUsuario>({
@@ -60,7 +60,7 @@ export default function Cadastro() {
 }
 
   return (
-    <main className="formularios flex text-2xl font-bold justify-between gap-10 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
+    <main className="formularios flex text-2xl font-bold justify-between gap-0 phone:max-xl:pb-10 phone:max-lg:pl-0 phone:max-lg:w-72 phone:max-sm:text-xl">
       <aside className="formulario  pl-40 pt-10 phone:max-xl:pl-5 phone:max-lg:pr-0 flex flex-col gap-20 pb-5">
 
           <Link className="voltar flex gap-4" href="/">
@@ -85,16 +85,16 @@ export default function Cadastro() {
                   <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" type={senhaVisivel ? "text" : "password"} name="senha" id="idSenha" value={usuario.senha} onChange={(e)=> setUsuario({...usuario, senha: e.target.value})} placeholder="Digite sua senha" required/>
                   <label className="text-lg text-red-500" htmlFor="idSenha">*Obrigatório</label>
                   <div className="mostrar flex gap-3">
-                      <h5>Mostrar Senha</h5>
+                      <h5>Mostrar senha</h5>
                       <button type="button" onClick={() => setSenhaVisivel(!senhaVisivel)}>
                           <input type="checkbox"/>
                       </button>
                   </div>
               </div>
               <h4>Já tem uma conta?</h4>
-              <Link href="/usuario/login">
-                <h5>Aperte aqui para logar</h5>
-                <SetaDireita/>
+              <Link href="/usuario/login" className="flex gap-5">
+                <h5>Click para realizar o login</h5>
+                <SetaDireita className="relative top-1"/>
               </Link>
               <h3 className={className}>{mensagemStatus}</h3>
               <div>

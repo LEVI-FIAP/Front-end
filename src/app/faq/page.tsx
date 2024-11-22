@@ -27,7 +27,7 @@ export default function Faq() {
       <div className="intro bg-black text-white flex px-20 py-10 justify-between">
         <div className=" flex flex-col gap-20 phone:max-lg:z-10">
           <h1 className="font-bold text-4xl">Perguntas Frequentes</h1>
-          <h4 className="w-80 text-xl phone:max-lg:w-auto">Veja as perguntas mais feitas por todos usuarios, caso sua duvida não tenha sido resolvida entre em contato com nós</h4>
+          <h4 className="w-80 text-xl phone:max-lg:w-auto">Veja as perguntas mais feitas pelos usuários. Caso sua dúvida não tenha sido resolvida, entre em contato conosco.</h4>
           <a href="mailto:luizhneri11@gmail.com?subject=Contato&body=Escreva%20sua%20mensagem%20aqui" className="flex gap-10 border-t-2 pt-5">
             <h6 className="underline">Entre em contato</h6>
             <Telefone className="relative top-1 text-telefone" />
@@ -43,7 +43,7 @@ export default function Faq() {
             <button onClick={()=> mudarModal(1)} className={`${modaisAbertos[1] ? "aberto": "fechado"}`}><Seta/></button>
           </div>
           <dialog open={modaisAbertos[1]} className="perguntas-modal">     
-            <p>Porque aqui oferecemos ferramentas para te concientizar e ajudar o meio ambiente com base nas suas próprias ações, você terá a facilidade e rapidez em calcular seus gastos com energia, alem de ver em quanto tempo essa mudança de fonte de energia seria bom para vc.</p>
+            <p>Oferecemos ferramentas para lhe conscientizar e ajudar o meio ambiente com base nas suas próprias ações, você terá a facilidade e rapidez em calcular seus gastos com energia, alem de ver em quanto tempo essa mudança de fonte de energia seria bom para vc.</p>
           </dialog>
         </div>
 

@@ -17,12 +17,12 @@ export default function Menu() {
 
           <div className="pb-20 px-10 flex flex-col gap-10">
             <div className="recepcao text-center border-b-2 border-gray-400 p-5">
-              <h3>Bem Vindo!!</h3>
+              <h3>Bem-Vindo(a)!</h3>
             </div>
 
             <nav className="flex flex-col gap-10">
-              <Link href="/usuario/login">Logar</Link>
-              <Link href="/usuario/cadastro">Cadastrar</Link>
+              <Link href="/usuario/login">Login</Link>
+              <Link href="/usuario/cadastro">Cadastro</Link>
             </nav>
           </div>
 

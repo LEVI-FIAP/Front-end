@@ -6,27 +6,30 @@ import { Autoplay } from 'swiper/modules'
 import Image from 'next/image';
 import Link from 'next/link';
 import ImgRelatorio from "@/images/user/img-relatorio.png";
+import { TipoRelatorio } from '@/types';
 
 
-export default function Relatorios ({idRelatorio} : {idRelatorio:number}) {
+export default function Relatorios ({relatorios} : {relatorios:TipoRelatorio[]}) {
     
   return (
-    <div className='bg-black'>
-      <Swiper modules = {[Autoplay]} spaceBetween={300} slidesPerView={2} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
+    <div className=" bg-black py-10">
+      <Swiper modules = {[Autoplay]} spaceBetween={300} slidesPerView={3} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
         delay: 2500, 
         disableOnInteraction: false, 
       }}>
-        <SwiperSlide className='slide'>
-          <div className='flex flex-col justify-center gap-5 border-2 border-gray-400 w-max rounded-2xl bg-white p-7 font-bold hover:border-blue-400'>
-            <Image src={ImgRelatorio} alt='img-slide'/>
-            <h3 className='text-center'>Relatorio {idRelatorio}</h3>
-            <Link href={`/usuario/relatorio/${idRelatorio}`} className='flex gap-5 items-center text-gray-400 bg-gray-800 pl-5 py-1 text-xl'>
-                <h6>Veja o Relatório</h6>
-                <Barras /> 
-            </Link>
-          </div>
-            
-        </SwiperSlide>
+          {relatorios.map((relatorio) => (
+            <SwiperSlide key={relatorio.id}>
+              <div className='flex flex-col w-min justify-center gap-5 border-2 border-gray-400 rounded-2xl bg-white p-5 font-bold hover:border-blue-400'>
+                <Image src={ImgRelatorio} alt="img-slide"></Image>
+                <h3 className='relative bottom-52 left-16 text-white'>Relatorio {relatorio.id}</h3>
+                <Link href={`/usuario/relatorio/${relatorio.id}`} className='flex w-max gap-3 text-gray-400 bg-gray-600 p-3 rounded-lg'>
+                  <Barras className='relative top-1'/>
+                  <h6>Veja O Relatório</h6>
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))}
+
       </Swiper>
 
     </div>    
