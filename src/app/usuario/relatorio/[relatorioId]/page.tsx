@@ -154,7 +154,7 @@ if (erro) {
         </div>
 
         <div className="bg-[url('../assets/fundo-relatorio-2.png')] bg-cover bg-center text-white px-20 py-10 flex flex-col gap-14 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2 phone:max-lg:pt-20">
-          <p className="w-110 phone:max-md:w-80 phone:max-sm:w-auto pt-10">Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
+          <p className="w-110 phone:max-md:w-72 pt-10">Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
           <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10 phone:max-lg:w-auto flex-wrap">
             <Link href={`/usuario/${relatorio.idUsuario}`} className="flex gap-10">
               <h6>Voltar para a página de usuario</h6>
