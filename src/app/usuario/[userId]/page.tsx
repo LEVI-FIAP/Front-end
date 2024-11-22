@@ -121,14 +121,14 @@ if (erroUsuario){
     <main className="flex flex-col gap-14">
         <div className="intro bg-[url('../assets/fundo-usu.png')] bg-cover bg-center text-white px-20 py-36 flex flex-col gap-10 font-bold text-2xl phone:max-md:text-lg phone:max-md:px-2">
           <h1 className="text-5xl">{usuario.username}</h1>
-          <p className="w-96 phone:max-sm:w-auto">Seja Bem vindo a página feita para você! Analíse e utilize das ferramentas que criamos especialmente para você usuario</p>
+          <p className="w-96 phone:max-sm:w-auto">Seja bem-vindo(a) à página feita para você! Analise e utilize das ferramentas que criamos especialmente para você!</p>
         </div>
         <div className="meio flex flex-col gap-20">
           <h2 className="text-center text-4xl font-bold">Bem vindo(a) {usuario.username}</h2>
           <div className="texto bg-gray-100 p-20">
             <p>O projeto visa calcular a viabilidade da instalação de painéis solares com base na área disponível do usuário. Primeiro, determinamos quantos painéis cabem na área, considerando que cada painel ocupa 1,7 m². Com a quantidade de painéis, calculamos a potência total do sistema (kWp), multiplicando o número de painéis pela potência de cada painel (0,33 kW).
               Em seguida, estimamos a geração de energia mensal (kWh/mês), multiplicando a potência total pela quantidade de horas de sol diárias na região e por 30 dias. Com essa geração de energia, comparamos com o consumo do usuário para saber se o sistema será suficiente.
-              Na parte financeira, calculamos o payback (tempo de retorno do investimento). Para isso, calculamos o custo total da instalação (R$ 5.250 por kW) e a economia mensal (R$ 425 por kW). Com esses valores, determinamos em quanto tempo o sistema se paga, proporcionando um retorno financeiro ao usuário.
+              Na parte financeira, calculamos o payback (tempo de retorno do investimento). Para isso, calculamos o custo total da instalação e a economia mensal. Com esses valores, determinamos em quanto tempo o sistema se paga, proporcionando um retorno financeiro ao usuário.
               Esses cálculos ajudam a avaliar a viabilidade técnica e financeira da instalação de painéis solares, permitindo uma decisão informada sobre a adoção de energia solar.</p>
           </div>
           
@@ -139,7 +139,6 @@ if (erroUsuario){
             <div className="botaoUsu">
               <BtnPgs Icon={Lapis} texto="Editar Meus dados" link={`/usuario/editar/${params.userId}`}/>
             </div>
-            <button className="flex" onClick={() => mudarModal()}>Deletar Usuario</button>
         </div>      
         <dialog open={deletarModal}>
           <button onClick={() => mudarModal()}>X</button>
@@ -153,6 +152,7 @@ if (erroUsuario){
             <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar/${params.userId}`}/>
           </div>
         </div>
+            <button className="flex" onClick={() => mudarModal()}>Deletar Usuário</button>
 
         <div>
           {erroRelatorio ? (
