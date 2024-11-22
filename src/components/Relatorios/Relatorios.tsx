@@ -13,7 +13,7 @@ export default function Relatorios ({relatorios} : {relatorios:TipoRelatorio[]})
     
   return (
     <div className=" bg-black py-10">
-      <Swiper modules = {[Autoplay]} spaceBetween={300} slidesPerView={2} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
+      <Swiper modules = {[Autoplay]} spaceBetween={300} slidesPerView={3} loop={true} pagination={true} navigation={true} className='swiperHome' autoplay={{
         delay: 2500, 
         disableOnInteraction: false, 
       }}>
