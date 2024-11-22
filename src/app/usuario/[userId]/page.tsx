@@ -124,7 +124,7 @@ if (erroUsuario){
           <p className="w-96 phone:max-sm:w-auto">Seja Bem vindo a página feita para você! Analíse e utilize das ferramentas que criamos especialmente para você usuario</p>
         </div>
         <div className="meio flex flex-col gap-20">
-          <h2 className="text-center text-4xl font-bold">Bem vindo(a) Usuario</h2>
+          <h2 className="text-center text-4xl font-bold">Bem vindo(a) {usuario.username}</h2>
           <div className="texto bg-gray-100 p-20">
             <p>O projeto visa calcular a viabilidade da instalação de painéis solares com base na área disponível do usuário. Primeiro, determinamos quantos painéis cabem na área, considerando que cada painel ocupa 1,7 m². Com a quantidade de painéis, calculamos a potência total do sistema (kWp), multiplicando o número de painéis pela potência de cada painel (0,33 kW).
               Em seguida, estimamos a geração de energia mensal (kWh/mês), multiplicando a potência total pela quantidade de horas de sol diárias na região e por 30 dias. Com essa geração de energia, comparamos com o consumo do usuário para saber se o sistema será suficiente.
