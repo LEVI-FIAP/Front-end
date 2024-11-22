@@ -153,7 +153,7 @@ if (erroUsuario){
               </div>
             ) : (
 
-            <div className="carroselRelatorios">
+            <div className="carrosel Relatorios">
               <Relatorios relatorios={relatorios}/>
             </div>
           )}
