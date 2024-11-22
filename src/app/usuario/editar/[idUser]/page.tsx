@@ -101,9 +101,9 @@ export default function Editar({params}: {params: { idUser: number }}) {
                     </button>
                   </div>
               </div>
-              <Link href={`/usuario/${params.idUser}`}>
-                <SetaDireita />
+              <Link href={`/usuario/${params.idUser}`} className="flex gap-4">
                 <h4>Voltar para página de Usuário</h4>
+                <SetaDireita className="relative top-1" />
               </Link>
               <h3 className={className}>{mensagemStatus}</h3>
               <div>

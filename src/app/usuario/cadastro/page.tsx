@@ -92,9 +92,9 @@ export default function Cadastro() {
                   </div>
               </div>
               <h4>Já tem uma conta?</h4>
-              <Link href="/usuario/login">
+              <Link href="/usuario/login" className="flex gap-5">
                 <h5>Click para realizar o login</h5>
-                <SetaDireita/>
+                <SetaDireita className="relative top-1"/>
               </Link>
               <h3 className={className}>{mensagemStatus}</h3>
               <div>

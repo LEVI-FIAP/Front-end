@@ -109,9 +109,9 @@ export default function Cadastrar({params}: {params: { userId: number }}) {
                   <label htmlFor="idValor">Valor médio da conta de luz (R$):</label>
                   <input className="bg-gray-300 text-gray-500 p-2 w-108 sm:max-lg:w-auto phone:max-sm:w-60" min='0' type="number" name="valor" id="idValor" value={relatorio.contaLuz} onChange={(e)=> setRelatorio({...relatorio, contaLuz: Number(e.target.value)})} placeholder="Digite a média da sua conta de luz" required/>
               </div>
-              <Link href={`/usuario/${params.userId}`}>
-                <SetaDireita />
+              <Link href={`/usuario/${params.userId}`} className="flex gap-5">
                 <h4>Voltar para página de Usuário</h4>
+                <SetaDireita className="relative top-1" />
               </Link>
               <h3 className={className}>{mensagemStatus}</h3>
               <button className="btn flex justify-self-center bg-gray-600 text-white py-2 px-40 phone:max-sm:px-10" type="submit">Cadastrar</button>
