@@ -5,7 +5,7 @@
 
 @layer components{
     main{
-        @apply text-2xl;
+        @apply text-2xl sm:max-md:text-lg phone:max-sm:text-base;
 
 
         & .perguntas{
