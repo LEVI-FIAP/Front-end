@@ -75,7 +75,7 @@ if (erro) {
             <h1 className="text-3xl phone:max-md:text-xl">Relatório {params.relatorioId}</h1>
             <p className="w-110 phone:max-md:w-auto">Veja os detalhes e contas que utilizamos para o descobrimento do seu investimento no sistema solar</p>
           </div>
-          <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10">
+          <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10 phone:max-lg:w-auto flex-wrap">
             <h6>Veja todos os seus relatorios</h6>
             <Link href={`/usuario/${relatorio.idUsuario}`} className="relative top-1 text-red-600">
                 <SetaDireita/>
@@ -87,10 +87,10 @@ if (erro) {
             <aside className="img phone:max-lg:hidden">
               <Image src={PainelImg} alt="img-painel" className="h-101"/>
             </aside>
-            <aside className="conteudo flex flex-col pr-20 justify-center text-center gap-10  text-white font-bold text-2xl phone:max-lg:px-10">
+            <aside className="conteudo flex flex-col pr-20 justify-center text-center gap-10  text-white font-bold text-2xl sm:max-lg:px-10 phone:max-sm:px-0">
               <h2 className="text-4xl">Quantidade de painéis</h2>
               <p className="w-110 phone:max-lg:w-auto">Veja quanto painéis serão necessarios para gerar a energia necessario com base no tamanho do local que você nos informou, o tamanho médio de um painél é 1.7m</p>
-              <div className="flex text-center">
+              <div className="flex text-center flex-wrap">
                 <h3>Fórmula = </h3>
                 <h3>Área DIsponivel(m²)</h3>
                 <h3>Área de um painél</h3>
@@ -149,13 +149,13 @@ if (erro) {
 
         </div>
 
-        <div className="w-60 pl-10">
+        <div className="w-60 pl-10 phone:max-lg:w-auto phone:max-lg:pl-0">
           <BtnPgs Icon={Lapis} texto="Editar Relatorio" link={`/usuario/relatorio/editar/${params.relatorioId}`}/>
         </div>
 
         <div className="bg-[url('../assets/fundo-relatorio-2.png')] bg-cover bg-center text-white px-20 py-10 flex flex-col gap-14 font-bold text-xl phone:max-md:text-lg phone:max-md:px-2 phone:max-lg:pt-20">
-          <p className="w-110 phone:max-md:w-80">Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
-          <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10">
+          <p className="w-110 sm:max-md:w-80 phone:max-sm:w-auto">Esperamos que com esse investimento você decida se é vantajoso ou não, lembre-se a sua ajuda importa muito</p>
+          <div className="link flex border-t-2 w-105 pt-10 mt-10 gap-10 phone:max-lg:w-auto flex-wrap">
             <h6>Voltar para a página de usuario</h6>
             <Link href={`/usuario/${relatorio.idUsuario}`} className="relative top-1 text-red-600">
               <SetaDireita/>
