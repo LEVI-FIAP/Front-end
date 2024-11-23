@@ -122,6 +122,7 @@ if (erroUsuario){
         <div className="intro bg-[url('../assets/fundo-usu.png')] bg-cover bg-center text-white px-20 py-36 flex flex-col gap-10 font-bold text-2xl phone:max-md:text-lg phone:max-md:px-2">
           <h1 className="text-5xl">{usuario.username}</h1>
           <p className="w-96 phone:max-sm:w-auto">Seja bem-vindo(a) à página feita para você! Analise e utilize das ferramentas que criamos especialmente para você!</p>
+            <button className="flex ml-10 p-2 text-xl hover:text-red-600 hover:border-red-600 border-2 border-gray-400 text-gray-400 rounded-xl w-max" onClick={() => mudarModal()}>Deletar Usuário</button>
         </div>
         <div className="meio flex flex-col gap-20">
           <h2 className="text-center text-4xl font-bold">Bem vindo(a) {usuario.username}</h2>
@@ -155,7 +156,6 @@ if (erroUsuario){
             <BtnPgs Icon={Lapis} texto="Fazer um relatorio" link={`/usuario/relatorio/cadastrar/${params.userId}`}/>
           </div>
         </div>
-            <button className="flex ml-10 p-2 text-xl hover:text-red-600 hover:border-red-600 border-2 border-gray-400 text-gray-400 rounded-xl w-max" onClick={() => mudarModal()}>Deletar Usuário</button>
 
         <div>
           {erroRelatorio ? (
