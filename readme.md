@@ -22,7 +22,7 @@ Link do video - <a href="https://youtu.be/PkXg9ScyzIg">Clique aqui para ver noss
 ---
 
 #### Vercel
-Link do vercel - <a href="https://autosense-sprint4-cyi0ok86a-ffukurous-projects.vercel.app/">Clique aqui para ver o site pela vercel</a>
+Link do vercel - <a href="https://levi-front-gs.vercel.app/">Clique aqui para ver o site pela vercel</a>
 
 ---
 
