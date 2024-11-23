@@ -96,7 +96,7 @@ const handleDelete = async ()=>{
 }
 if (usuarioDeletado){
   return (
-    <main className="usuarioDeletado">
+    <main className="usuarioDeletado flex bg-black text-white justify-center py-20 text-3xl font-bold hover:text-red-600">
       <p>{usuarioDeletado}</p>
     </main>
   )
